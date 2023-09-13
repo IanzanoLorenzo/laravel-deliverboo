@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Photo;
 use App\Models\Dish;
 use App\Models\Order;
+use App\Models\Type;
 
 class Resturant extends Model
 {
@@ -27,5 +28,9 @@ class Resturant extends Model
 
     public function orders(){
         return $this->hasMany(Order::class);
+    }
+
+    public function types(){
+        return $this->belongsToMany(Type::class);
     }
 }
