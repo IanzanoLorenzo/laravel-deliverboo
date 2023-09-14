@@ -9,7 +9,7 @@
         @foreach ($resturant->dishes as $item)
         <div class="row">
             <div class="col-12">
-                <div class="card">
+                <div class="card text-center">
                     <h4>
                             {{$item->name}}
                     </h4>
