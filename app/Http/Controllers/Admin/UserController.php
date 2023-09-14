@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Dish;
-use App\Http\Requests\StoreDishRequest;
-use App\Http\Requests\UpdateDishRequest;
+use App\Models\User;
+use Illuminate\Http\Request;
 
-class DishController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +30,10 @@ class DishController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDishRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDishRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +41,10 @@ class DishController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dish  $dish
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Dish $dish)
+    public function show(User $user)
     {
         //
     }
@@ -53,10 +52,10 @@ class DishController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Dish  $dish
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dish $dish)
+    public function edit(User $user)
     {
         //
     }
@@ -64,11 +63,11 @@ class DishController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateDishRequest  $request
-     * @param  \App\Models\Dish  $dish
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDishRequest $request, Dish $dish)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -76,10 +75,10 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dish  $dish
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dish $dish)
+    public function destroy(User $user)
     {
         //
     }
