@@ -8,8 +8,10 @@
                 <div class="card-header">{{ __('Registrazione') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
+
+                        <h2 class="text-center">Dati utente</h2>
 
                         <div class="mb-4 row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
@@ -73,13 +75,59 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
                         <div class="mb-4 row">
                             <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva') }}</label>
 
                             <div class="col-md-6">
-                                <input id="vat_number" type="vat_number" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" required autocomplete="new-vat_number" value="{{ old('vat_number') }}">
+                                <input id="vat_number" type="text" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" required autocomplete="new-vat_number" value="{{ old('vat_number') }}">
 
                                 @error('vat_number')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <h2 class="text-center">Dati ristorante</h2>
+
+
+                        <div class="mb-4 row">
+                            <label for="resturant_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="resturant_name" type="text" class="form-control @error('resturant_name') is-invalid @enderror" name="resturant_name" required autocomplete="new-resturant_name" value="{{ old('resturant_name') }}">
+
+                                @error('resturant_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="new-address" value="{{ old('address') }}">
+
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label for="cover_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cover_image" type="file" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" required autocomplete="new-cover_image" value="{{ old('cover_image') }}">
+
+                                @error('cover_image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

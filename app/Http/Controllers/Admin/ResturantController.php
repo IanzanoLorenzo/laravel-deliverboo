@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Resturant;
 use App\Http\Requests\StoreResturantRequest;
 use App\Http\Requests\UpdateResturantRequest;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 class ResturantController extends Controller
 {
     /**
@@ -15,7 +17,11 @@ class ResturantController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::id();
+        $user = User::find($id);
+        $resturant = Resturant::where('user_id', '=', $id);
+
+        return view('admin.resturant.index', compact('user', 'resturant'));
     }
 
     /**
