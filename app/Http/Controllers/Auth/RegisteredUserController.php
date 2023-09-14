@@ -56,14 +56,17 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        /* RECUPERA L'ID DELL'UTENTE ATTUALMENTE VERIFICATO */
         $id = Auth::id();
         
+        /* DICHIARAZIONE VARIIABILE PATH */
         $path;
 
         if($request->hasFile('cover_image')){
         $path = Storage::put('cover_images', $request->cover_image);
         }
 
+        /* SALVATAGGIO RISTORANTE */
         $resturant = Resturant::create([
             'user_id' => $id,
             'name' => $request->resturant_name,

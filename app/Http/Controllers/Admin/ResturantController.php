@@ -17,10 +17,12 @@ class ResturantController extends Controller
      */
     public function index()
     {
+        //RECUPERO L'ID DELL'UTENTE ATTUALMENTE LOGGATO
         $id = Auth::id();
+        //METODO PER RECUPERARE UN RECORD DA UNA TABELLA TRAMITE L'ID
         $user = User::find($id);
-        $resturant = Resturant::where('user_id', '=', $id);
 
+        $resturant = Resturant::where('user_id', '=', $id)->get();
         return view('admin.resturant.index', compact('user', 'resturant'));
     }
 
