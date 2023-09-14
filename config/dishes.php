@@ -51,6 +51,13 @@ return [
         'visibility' => true,
     ],
     [
+        'name' => 'Sushi Misto',
+        'ingredients' => 'Riso, Salmone, Tonno, Avocado, Alga Nori',
+        'price' => 18.99,
+        'resturant_id' => 2,
+        'visibility' => true,
+    ],
+    [
         'name' => 'Hamburger Deluxe',
         'ingredients' => 'Carne di Manzo, Formaggio Cheddar, Lattuga, Pomodoro',
         'price' => 11.99,
