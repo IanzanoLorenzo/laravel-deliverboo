@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('surname', 50)->after('name');
-            $table->string('vat_number', 11)->after('email_verified_at');
+            $table->string('vat_number', 13)->after('email_verified_at');
         });
     }
 
