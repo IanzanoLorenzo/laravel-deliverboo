@@ -20,6 +20,9 @@
                     <th scope="col">
                         Prezzo
                     </th>
+                    <th scope="col">
+                        Visibile
+                    </th>
                     <th class="text-center" scope="col">
                         Azioni
                     </th>
@@ -30,6 +33,7 @@
                 <tr>
                     <td>{{$dish->name}}</td>
                     <td>{{$dish->price}}&euro;</td>
+                    <td>{{ $dish->visibility ? 'Sì' : 'No' }}</td>
                     <td class="text-center">
                         <a href="{{ route('admin.dishes.show', $dish ) }}" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
                         <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>

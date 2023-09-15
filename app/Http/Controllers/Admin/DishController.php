@@ -83,7 +83,12 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
-        //
+        $form_data = $request->all();
+        $user_id = Auth::id();
+        $resturant = Resturant::where('user_id', $user_id)->with('dishes')->get('id')->first();
+        $form_data['resturant_id'] = $resturant->id;
+        $dish->update($form_data);
+        return redirect()->route('admin.dishes.index');
     }
 
     /**

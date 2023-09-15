@@ -37,12 +37,15 @@
                     </div>
                     <div class="form-group p-3">
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="visibility" id="visibility1" autocomplete="off" checked value="1">
+                            <input type="radio" class="btn-check" name="visibility" id="visibility1" autocomplete="off" value="1">
                             <label class="btn btn-outline-success" for="visibility1">Visibile</label>
                           
                             <input type="radio" class="btn-check" name="visibility" id="visibility2" autocomplete="off" value="0">
                             <label class="btn btn-outline-danger" for="visibility2">Non visibile</label>
                         </div>
+                        @error('visibility')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror 
                     </div>
                     <button type="submit" class="btn btn-primary m-3">Crea piatto</button>  
                     <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Torna alla lista piatti</a>
