@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('customer_surname');
             $table->time('delivery_time');
             $table->float('total_price', 6,2);
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }

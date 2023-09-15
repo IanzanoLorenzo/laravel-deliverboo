@@ -9,7 +9,7 @@ use App\Models\Resturant;
 class Type extends Model
 {
     use HasFactory;
-
+    
     public function resturants(){
         return $this->belongsToMany(Resturant::class);
     }
