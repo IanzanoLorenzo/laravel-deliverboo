@@ -32,7 +32,7 @@ class DishController extends Controller
     {
         return view('admin.dishes.create');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -41,7 +41,15 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-        //
+        $form_data = $request->all();
+        $user_id = Auth::id();
+        $resturant = Resturant::where('user_id', $user_id)->with('dishes')->get('id')->first();
+        $form_data['resturant_id'] = $resturant->id;
+        $dish = new Dish();
+        $dish->fill($form_data);
+        $dish->save();
+        return redirect()->route('admin.dishes.index');
+        
     }
 
     /**

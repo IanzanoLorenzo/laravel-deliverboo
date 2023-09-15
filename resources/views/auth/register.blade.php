@@ -140,7 +140,7 @@
                             <div class="col-md-6">
                                 <div class="input-group">
                                 @foreach ($types as $type)
-                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}">
+                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" {{( in_array($type->id, old('type', []))) ? 'checked' : ''}}>
                                     <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
                                 @endforeach
                                 </div>
