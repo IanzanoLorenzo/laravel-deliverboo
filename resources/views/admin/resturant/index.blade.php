@@ -23,5 +23,8 @@
             </div>
         </div>
         @endforeach
+        @foreach ($resturant->types as $type)
+            {{$type->name}}
+        @endforeach
     </div>
 @endsection

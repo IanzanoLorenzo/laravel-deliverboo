@@ -22,8 +22,7 @@ class ResturantController extends Controller
         //METODO PER RECUPERARE UN RECORD DA UNA TABELLA TRAMITE L'ID
         $user = User::find($id);
 
-        $resturants = Resturant::where('user_id', '=', $id)->get();
-        $resturant = $resturants[0];
+        $resturant = Resturant::where('user_id', '=', $id)->with('types')->get()->first();
 
         return view('admin.resturant.index', compact('user', 'resturant'));
     }
