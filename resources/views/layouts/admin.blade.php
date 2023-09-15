@@ -87,7 +87,7 @@
         </main>
 
         {{-- FOOTER --}}
-        <footer>
+        {{-- <footer>
             <div class="bg-black py-3">
                 <div class="content">
                     <div class="container text-light">
@@ -98,7 +98,7 @@
                 </div>
             </div>
 
-        </footer>
+        </footer> --}}
         {{-- FINE FOOTER --}}
     </div>
 </body>
