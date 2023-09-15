@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ResturantController as ResturantController;
+use App\Http\Controllers\Admin\DishController as DishController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,8 @@ use App\Http\Controllers\Admin\ResturantController as ResturantController;
 
 
 Route::middleware('auth', 'verified')->prefix('admin')->name('admin.')->group(function(){
-    Route::get('/', [ResturantController::class, 'index'])->name('resturant');
+    Route::get('/resturants', [ResturantController::class, 'index'])->name('resturant');
+    Route::resource('/dishes', DishController::class);
 });
 
 Route::get('/', function () {

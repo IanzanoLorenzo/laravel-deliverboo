@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Dish;
+use App\Models\Resturant;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
@@ -14,8 +17,10 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        $user_id = Auth::id();
+        $resturant = Resturant::where('user_id', $user_id)->with('dishes')->get()->first();
+        return view('admin.dishes.index', compact('resturant'));
     }
 
     /**
