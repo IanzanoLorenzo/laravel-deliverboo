@@ -13,7 +13,7 @@
         <div class="col-12 card-body">
             <p><strong>ingredienti: {{$dish->ingredients}}</strong></p>
             <h3>prezzo:{{$dish->price}}€</h3>
-            <p>{{$dish->visibilty ? 'il piatto è visibile sul sito' : 'il piatto non è visibile  sul sito'}}</p>
+            <p>{{$dish->visibility ? 'Il piatto è visibile sul sito' : 'Il piatto non è visibile  sul sito'}}</p>
         </div>
     </div>
 </div>

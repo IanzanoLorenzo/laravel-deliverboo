@@ -24,14 +24,14 @@
                     </div>
                     <div class="form-group p-3">
                         <label class="control-label">Ingredienti</label>
-                        <textarea type="text" name="ingredients" id="ingredients" class="form-control @error('ingredients') is-invalid @enderror" placeholder="Inserisci la descrizione del progetto">{{ old('ingredients') ?? $dish->ingredients }}</textarea>
+                        <textarea type="text" name="ingredients" id="ingredients" class="form-control @error('ingredients') is-invalid @enderror" placeholder="Inserisci gli ingredienti">{{ old('ingredients') ?? $dish->ingredients }}</textarea>
                         @error('ingredients')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group p-3">
                         <label class="contol-label">Prezzo</label>
-                        <input type="text" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il nome dell'autore" value="{{ old('price') ?? $dish->price }}"> 
+                        <input type="text" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo" value="{{ old('price') ?? $dish->price }}"> 
                         @error('price')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror 
@@ -49,7 +49,7 @@
                             <label class="btn btn-outline-danger" for="visibility2">Non visibile</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary m-3">Crea piatto</button>  
+                    <button type="submit" class="btn btn-primary m-3">Modifica piatto</button>  
                     <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Torna alla lista piatti</a>
                 </form>
             </div>

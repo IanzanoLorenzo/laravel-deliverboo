@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
     <div class="col-12">
-        <h2 class="fs-4 text-secondary my-4">
+        <h2 class="my-4 text-center fs-1">
             Il tuo Men&uacute;
         </h2>
     </div>
-    <div class="col-12">
+    <div class="col-12 d-flex justify-content-end py-3 ">
         <a href="{{route('admin.dishes.create')}}" class="btn btn-primary">Nuovo Piatto</a>
     </div>
     <div class="col-12">
@@ -37,7 +37,7 @@
                     <td class="text-center">
                         <a href="{{ route('admin.dishes.show', $dish ) }}" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
                         <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
-                        <form method="POST" class="d-inline-block" action="{{ route('admin.dishes.destroy', $dish) }}">
+                        <form method="POST" class="d-inline-block dish-delete-button" action="{{ route('admin.dishes.destroy', $dish) }}" data-dish-name={{$dish->name}}>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">
@@ -51,4 +51,5 @@
         </table>    
     </div>
 </div>
+@include('admin.partials.model_dish_delete')
 @endsection

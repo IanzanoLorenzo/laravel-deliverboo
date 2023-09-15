@@ -48,7 +48,7 @@ class DishController extends Controller
         $dish = new Dish();
         $dish->fill($form_data);
         $dish->save();
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.show', compact('dish'));
         
     }
 
@@ -88,7 +88,7 @@ class DishController extends Controller
         $resturant = Resturant::where('user_id', $user_id)->with('dishes')->get('id')->first();
         $form_data['resturant_id'] = $resturant->id;
         $dish->update($form_data);
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.show', compact('dish'));
     }
 
     /**
@@ -99,6 +99,7 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+        return redirect()->route('admin.dishes.index');
     }
 }
