@@ -134,6 +134,23 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="mb-4 row">
+                            <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                @foreach ($types as $type)
+                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check mx-3 @error('type_name') is-invalid @enderror" name="type_name" value="{{ $type->id }}">
+                                    <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
+                                @endforeach
+                                </div>
+                                @error('type_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">

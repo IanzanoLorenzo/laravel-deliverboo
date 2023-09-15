@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Resturant;
+use App\Models\Type;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -23,7 +24,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $types = Type::all();
+        return view('auth.register', compact('types'));
     }
 
     /**
@@ -77,7 +79,9 @@ class RegisteredUserController extends Controller
 
         event(new Registered($resturant));
 
-
+        if($request->has('type_name')){
+            $resturant->types()->attach($request->type_name);
+        }
 
         return redirect(RouteServiceProvider::HOME);
     }
