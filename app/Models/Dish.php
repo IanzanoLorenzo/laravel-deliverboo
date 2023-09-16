@@ -11,7 +11,13 @@ class Dish extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['resturant_id', 'name', 'ingredients', 'price', 'visibility'];
+    protected $fillable = [
+        'resturant_id', 
+        'name', 
+        'ingredients', 
+        'price', 
+        'visibility'
+    ];
 
     public function resturant(){
         return $this->belongsTo(Resturant::class);
