@@ -27,7 +27,7 @@
                 </div> 
                 <div class="col-12 col-md-6 ">
                     {{-- Immagine gestionale --}}
-                    <img class="img-fluid"  src="{{ asset('storage/img/gestionale_home_def.jpg') }}" alt="">
+                    <img class="img-fluid"  src="{{ asset('storage/img/gestionale_home.png') }}" alt="">
                 </div>
             </div>
             {{-- Pulsante Registrati --}}
