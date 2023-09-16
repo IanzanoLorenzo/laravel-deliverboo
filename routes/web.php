@@ -18,7 +18,9 @@ use App\Http\Controllers\Admin\DishController as DishController;
 
 
 Route::middleware('auth', 'verified')->prefix('admin')->name('admin.')->group(function(){
-    Route::get('/resturants', [ResturantController::class, 'index'])->name('resturant');
+    Route::get('/resturants', [ResturantController::class, 'index'])->name('resturants');
+    Route::get('/resturants/edit', [ResturantController::class, 'edit'])->name('resturants.edit');
+    Route::match(['put', 'patch'],'/resturants/{resturant}', [ResturantController::class, 'update'])->name('resturants.update');
     Route::resource('/dishes', DishController::class);
 });
 

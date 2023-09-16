@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-12">
             <h2 class="fs-4 text-secondary my-4">
-                Crea il tuo nuovo Piatto
+                Modifica {{ $dish->name }}
             </h2>
         </div>
         <div class="col-12">

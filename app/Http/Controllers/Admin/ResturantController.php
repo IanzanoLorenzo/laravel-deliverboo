@@ -7,7 +7,11 @@ use App\Http\Requests\StoreResturantRequest;
 use App\Http\Requests\UpdateResturantRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+
+
 class ResturantController extends Controller
 {
     /**
@@ -24,7 +28,7 @@ class ResturantController extends Controller
 
         $resturant = Resturant::where('user_id', '=', $id)->with('types')->get()->first();
 
-        return view('admin.resturant.index', compact('user', 'resturant'));
+        return view('admin.resturants.index', compact('user', 'resturant'));
     }
 
     /**
@@ -65,9 +69,11 @@ class ResturantController extends Controller
      * @param  \App\Models\Resturant  $resturant
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resturant $resturant)
+    public function edit()
     {
-        //
+        $id = Auth::id();
+        $resturant = Resturant::where('user_id', $id)->get()->first();
+        return view('admin.resturants.edit', compact('resturant'));
     }
 
     /**
@@ -79,7 +85,17 @@ class ResturantController extends Controller
      */
     public function update(UpdateResturantRequest $request, Resturant $resturant)
     {
-        //
+        $form_data = $request->all();
+        if($request->hasFile('cover_image')){
+            if($resturant->cover_image !== null){
+                Storage::delete($resturant->cover_image);
+            }
+            $path = Storage::put('cover_images', $request['cover_image']);
+            $form_data['cover_image'] = $path;
+        }
+        $form_data['slug'] = Str::slug($form_data['name']);
+        $resturant->update($form_data);
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
