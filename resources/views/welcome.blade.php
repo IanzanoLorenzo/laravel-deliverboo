@@ -25,9 +25,9 @@
                         la tua attività più efficiente e redditizia.
                     </p>
                 </div> 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 ">
                     {{-- Immagine gestionale --}}
-                    <img src="{{ asset('storage/img/gestionale_home_def.jpg') }}" alt="">
+                    <img class="img-fluid"  src="{{ asset('storage/img/gestionale_home_def.jpg') }}" alt="">
                 </div>
             </div>
             {{-- Pulsante Registrati --}}
