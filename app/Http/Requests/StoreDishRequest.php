@@ -24,7 +24,15 @@ class StoreDishRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'string'],
+            'ingredients' => ['required', 'string'],
+            ''
+        ];
+    }
+
+    public function messages(){
+        return[
+
         ];
     }
 }
