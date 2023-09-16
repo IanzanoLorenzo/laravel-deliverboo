@@ -60,7 +60,20 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
+        if (!$dish) {
+            // Gestisci il caso in cui il piatto non esista
+            return abort(404);
+        }
+
+        $resturant= Resturant::where('user_id', Auth::id())->get()->first();
+        if ($dish->resturant_id != $resturant->id){
+            // L'utente non è il proprietario del piatto, quindi non ha autorizzazione
+            return redirect()->route('dashboard')->with('error', 'Non hai l\'autorizzazione per modificare questo piatto.');
+        }
+
         return view('admin.dishes.show', compact('dish'));
+
+        
     }
 
     /**
@@ -71,6 +84,17 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        if (!$dish) {
+            // Gestisci il caso in cui il piatto non esista
+            return abort(404);
+        }
+
+        $resturant= Resturant::where('user_id', Auth::id())->get()->first();
+        if ($dish->resturant_id != $resturant->id){
+            // L'utente non è il proprietario del piatto, quindi non ha autorizzazione
+            return redirect()->route('dashboard')->with('error', 'Non hai l\'autorizzazione per modificare questo piatto.');
+        }
+        
         return view('admin.dishes.edit', compact('dish'));
     }
 
