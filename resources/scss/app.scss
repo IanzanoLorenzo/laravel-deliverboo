@@ -1,17 +1,31 @@
-$dark: #000000;
-$danger: #e22d05;
-$primary: #426dda;
-$warning: #ffc502;
+$dark: rgb(24, 24, 24);
+$danger: #ff0000;
+$primary: #ca2448;
+$warning:  #ff8800;
 
 @import '~bootstrap/scss/bootstrap';
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;1,300;1,600;1,800&display=swap');
 
-// footer{
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-// }
+body{
+    background: linear-gradient(20deg , $danger  60%, $warning 60%);
+    font-family: 'Montserrat', sans-serif;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
 
 
+.button-delive{
+    background-color: white;
+    //border-radius: 50% !important;
+}
 
+.button-delive:hover{
+    background: none;
+    border:1px solid white;
+    color:white;
+}
+
+.shadow-title{
+    text-shadow: 3px 3px white ;
+}
