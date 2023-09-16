@@ -21,11 +21,11 @@
     
 </head>
 
-<body class="bg-dark">
+<body class="bg-danger">
     <div id="app">
 
         {{-- INIZIO NAVBAR --}}
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="bg-light navbar navbar-expand-md">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">

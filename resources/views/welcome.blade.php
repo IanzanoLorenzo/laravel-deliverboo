@@ -3,14 +3,17 @@
 
 @section('content')
 
-<div class="bg-dark px-5 mb-4">
+<div class="bg-danger px-5">
     {{-- JUMBOTRON --}}
     <div class="container py-5 ">
         {{-- Titolone --}}
-        <h1 class="text-warning display-5 fw-bold">
-            Ben arrivato nel tuo gestionale di DeliveBoo!
+        <h1 class="text-light display-5 fw-bold">
+            Ben arrivato nel tuo gestionale di <em class="text-dark">DeliveBoo!</em>
         </h1>
-        <div class="row">
+
+        {{-- STRISCIA NERA --}}
+        <div class="">
+            <div class="row">
             <div class="col-12 col-md-6 d-flex align-items-center">
                 {{-- Paragrafo --}}
                 <p class="text-light fs-5">
@@ -22,15 +25,14 @@
             </div>
             <div class="col-12 col-md-6">
                 {{-- Immagine gestionale --}}
-                <img src="{{ asset('storage/img/gestionale_home.jpg') }}" alt="">
+                <img src="{{ asset('storage/img/gestionale_home_def.jpg') }}" alt="">
             </div>
-            
         </div>
-        
         {{-- Pulsante Registrati --}}
         @if (Route::has('register'))
         <a href="{{ route('register')}}" class="btn btn-primary btn-lg" type="button">Registrati</a>
         @endif
+        </div>
     </div>
     {{-- FINE JUMBOTRON --}}
 </div>
