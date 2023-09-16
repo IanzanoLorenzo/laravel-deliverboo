@@ -8,6 +8,11 @@
     <div class="card-header">
         <h1>{{$dish->name}}</h1>
     </div>
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+    @endif
     <div class="row">
     
         <div class="col-12 card-body">
