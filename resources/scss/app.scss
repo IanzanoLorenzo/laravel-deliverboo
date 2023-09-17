@@ -1,8 +1,9 @@
-$dark: rgb(24, 24, 24);
+//COLOR PALETTE
+$dark: rgb(20, 20, 20);
 $danger: #ff0000;
-$primary: #f10f40;
+$primary: #961a66;
 $warning:  #ff8800;
-
+//FINE COLLOR PALETTE
 @import '~bootstrap/scss/bootstrap';
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;1,300;1,600;1,800&display=swap');
@@ -14,18 +15,29 @@ body{
     min-height: 100vh;
 }
 
-
-.button-delive{
-    background-color: white;
-    //border-radius: 50% !important;
+//STYLE UTILITIES
+.button_delive{
+    background-color: rgb(255, 255, 255);
 }
-
-.button-delive:hover{
+.button_delive:hover{
     background: none;
     border:1px solid white;
     color:white;
 }
+//FINE STYLE
 
-.shadow-title{
+//*****NAVBAR*****/
+.nav-item:hover{
+    font-weight: 800;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+//*****FINE NAVBAR*****/
+
+//******HOME PAGE******/
+.shadow_title{
     text-shadow: 3px 3px white ;
 }
+//******FINE HOME PAGE******/
+
+

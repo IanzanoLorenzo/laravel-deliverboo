@@ -8,20 +8,21 @@
         
         {{-- Titolone --}}
         <h1 class="text-light display-5 fw-bold text-center mt-4">
-            Ben arrivato nel tuo gestionale di <em class="text-dark shadow-title">DeliveBoo!</em>
+            Ben arrivato nel tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
         </h1>
-
-        <div class="container py-5 ">
+        
+        <div class="container py-3">
+            <hr class="text-white hr_size">
             <div class="row">
                 <div class="col-12 col-md-6 d-flex align-items-center">
                     {{-- Paragrafo --}}
-                    <p class="text-dark fs-5">
+                    <p class="text-white fs-5">
                         Se hai mai desiderato semplificare la gestione del tuo ristorante o servizio di 
-                        consegna di <strong class="text-light">cibo a domicilio</strong>, sei nel posto giusto.
+                        consegna di <span class="text-dark fw-bold">cibo a domicilio</span>, sei nel posto giusto.
                         <br> 
                         <br>
-                        Il nostro potente sistema di gestione 
-                        è stato progettato su misura per le tue esigenze, offrendoti la <strong class="text-light">soluzione completa</strong> per rendere 
+                        Il nostro sistema di gestione 
+                        è stato progettato su misura per le tue esigenze, offrendoti la <span class="text-dark fw-bold">soluzione completa</span> per rendere 
                         la tua attività più efficiente e redditizia.
                     </p>
                 </div> 
@@ -32,7 +33,7 @@
             </div>
             {{-- Pulsante Registrati --}}
             @if (Route::has('register'))
-                <a href="{{ route('register')}}" class="button-delive btn btn-lg" type="button">
+                <a href="{{ route('register')}}" class="button_delive btn btn-lg" type="button">
                     Registrati
                 </a>
             @endif

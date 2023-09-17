@@ -26,8 +26,9 @@
             {{-- INIZIO NAVBAR --}}
             <nav class="navbar navbar-expand-md">
                 <div class="container">
+                    {{-- LOGO --}}
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                        <div class="logo_laravel">
+                        <div class="">
                             LOGO
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
@@ -42,19 +43,20 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto ">
+                            {{-- HOME --}}
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{url('/') }}">{{ __('Home') }}</a>
+                                <a class="link_hover nav-link text-white fs-5 p-1" href="{{url('/') }}">{{ __('Home') }}</a>
                             </li>
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto text-white">
-                            <!-- Authentication Links -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- ACCEDI -->
                             @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                            <li class="nav-item ">
+                                <a class="nav-link text-white fs-5 p-1" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                             </li>
-            
+                            {{-- DROP DOWN MENU --}}
                             @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
