@@ -20,7 +20,6 @@
 
         
     </head>
-
     <body>
         <div id="app">
             {{-- INIZIO NAVBAR --}}
@@ -33,27 +32,24 @@
                         </div>
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
-
                     {{-- HAMBURGER MENU --}}
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <button class="navbar-toggler hamburger_menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     {{-- FINE HAMBURGER MENU --}}
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto ">
                             {{-- HOME --}}
-                            <li class="nav-item">
-                                <a class="link_hover nav-link text-white fs-5 p-1" href="{{url('/') }}">{{ __('Home') }}</a>
+                            <li class="nav-item nav_item_hover">
+                                <a class="nav-link text-white fs-5 p-1" href="{{url('/') }}">{{ __('Home') }}</a>
                             </li>
                         </ul>
-
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- ACCEDI -->
                             @guest
-                            <li class="nav-item ">
+                            <li class="nav-item nav_item_hover">
                                 <a class="nav-link text-white fs-5 p-1" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                             </li>
                             {{-- DROP DOWN MENU --}}

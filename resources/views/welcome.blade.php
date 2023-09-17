@@ -5,14 +5,12 @@
 
     {{-- JUMBOTRON --}}
     <div class="container-fluid">
-        
         {{-- Titolone --}}
         <h1 class="text-light display-5 fw-bold text-center mt-4">
             Ben arrivato nel tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
         </h1>
-        
         <div class="container py-3">
-            <hr class="text-white hr_size">
+            <hr class="text-white hr_style">
             <div class="row">
                 <div class="col-12 col-md-6 d-flex align-items-center">
                     {{-- Paragrafo --}}

@@ -1,7 +1,7 @@
 //COLOR PALETTE
 $dark: rgb(20, 20, 20);
 $danger: #ff0000;
-$primary: #961a66;
+$primary: #ac0a55;
 $warning:  #ff8800;
 //FINE COLLOR PALETTE
 @import '~bootstrap/scss/bootstrap';
@@ -27,16 +27,28 @@ body{
 //FINE STYLE
 
 //*****NAVBAR*****/
-.nav-item:hover{
+.nav_item_hover:hover{
     font-weight: 800;
-    border: 1px solid white;
-    border-radius: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.322);
+    border-width:thin;
 }
 //*****FINE NAVBAR*****/
 
 //******HOME PAGE******/
+.hamburger_menu{
+    padding: 3px !important;
+    box-shadow:none!important;
+} 
+.hamburger_menu:hover{
+    background-color: white !important;
+}
+
 .shadow_title{
     text-shadow: 3px 3px white ;
+}
+.hr_style{
+    border: 1px solid white;
+    opacity: 0.40;
 }
 //******FINE HOME PAGE******/
 
