@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ResturantController as ResturantController;
 use App\Http\Controllers\Admin\DishController as DishController;
+use App\Http\Controllers\Admin\UserController as UserController;
 
 /*
 |--------------------------------------------------------------------------

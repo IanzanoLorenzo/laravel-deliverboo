@@ -13,6 +13,8 @@ return [
 
         'cover_image' => 'cover_images/ristorante_italiano.jpg',
 
+        'types' => [1, 3]
+
     ],
     //Ristorante giapponese
     [
@@ -25,6 +27,8 @@ return [
         'address' => 'Via Amerigo Vespucci, 17',
 
         'cover_image' => 'cover_images/ristorante_giapponese.jpg',
+
+        'types' => [1, 2, 3]
 
     ],
     //Ristorante messicano
@@ -39,6 +43,7 @@ return [
 
         'cover_image' => 'cover_images/ristorante_messicano.jpg',
 
+        'types' => [3]
     ],
 ]
 ?>

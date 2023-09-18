@@ -3,36 +3,49 @@
 
 @section('content')
 
-<div class="bg-dark px-5 mb-4">
     {{-- JUMBOTRON --}}
-    <div class="container py-5 ">
+    <div class="container-fluid jumbotron">
         {{-- Titolone --}}
-        <h1 class="text-warning display-5 fw-bold">
-            Ben arrivato nel tuo gestionale di DeliveBoo!
+        @guest
+        <h1 class="text-light display-5 fw-bold text-center mt-4">
+            Ben arrivato nel tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
         </h1>
-        <div class="row">
-            <div class="col-12 col-md-6 d-flex align-items-center">
-                {{-- Paragrafo --}}
-                <p class="text-light fs-5">
-                    Se hai mai desiderato semplificare la gestione del tuo ristorante o servizio di 
-                    consegna di cibo a domicilio, sei nel posto giusto. Il nostro potente sistema di gestione 
-                    è stato progettato su misura per le tue esigenze, offrendoti la soluzione completa per rendere 
-                    la tua attività più efficiente, redditizia e soddisfacente.
-                </p>
+        @endguest
+        {{-- NOME UTENTE AUTENTICATO --}}
+        @auth
+        <h1 class="text-light display-5 fw-bold text-center mt-4">
+            Ben tornato nel tuo gestionale <span class="text-dark">{{Auth::user()->name}}</span>
+        </h1>
+        @endauth
+
+        <div class="container py-3">
+            <hr class="text-white hr_style">
+            <div class="row">
+                <div class="col-12 col-md-6 d-flex align-items-center">
+                    {{-- Paragrafo --}}
+                    <p class="text-white fs-5">
+                        Se hai mai desiderato semplificare la gestione del tuo ristorante o servizio di 
+                        consegna di <span class="text-dark fw-bold">cibo a domicilio</span>, sei nel posto giusto.
+                        <br> 
+                        <br>
+                        Il nostro sistema di gestione 
+                        è stato progettato su misura per le tue esigenze, offrendoti la <span class="text-dark fw-bold">soluzione completa</span> per rendere 
+                        la tua attività più efficiente e redditizia.
+                    </p>
+                </div> 
+                <div class="col-12 col-md-6 ">
+                    {{-- Immagine gestionale --}}
+                    <img class="img-fluid"  src="{{ asset('storage/img/gestionale_home.png') }}" alt="">
+                </div>
             </div>
-            <div class="col-12 col-md-6">
-                {{-- Immagine gestionale --}}
-                <img src="{{ asset('storage/img/gestionale_home.jpg') }}" alt="">
-            </div>
+            {{-- Pulsante Registrati --}}
+            @if (Route::has('register'))
+                <a href="{{ route('register')}}" class="button_delive btn btn-lg" type="button">
+                    Registrati
+                </a>
+            @endif
             
         </div>
-        
-        {{-- Pulsante Registrati --}}
-        @if (Route::has('register'))
-        <a href="{{ route('register')}}" class="btn btn-primary btn-lg" type="button">Registrati</a>
-        @endif
+        {{-- FINE JUMBOTRON --}}
     </div>
-    {{-- FINE JUMBOTRON --}}
-</div>
-
 @endsection

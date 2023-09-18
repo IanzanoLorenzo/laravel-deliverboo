@@ -1,106 +1,87 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Usando Vite -->
-    @vite(['resources/js/app.js'])
+        <!-- Usando Vite -->
+        @vite(['resources/js/app.js'])
 
-    
-</head>
-
-<body class="bg-dark">
-    <div id="app">
-
-        {{-- INIZIO NAVBAR --}}
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo_laravel">
-                        LOGO
-                    </div>
-                    {{-- config('app.name', 'Laravel') --}}
-                </a>
-
-                {{-- HAMBURGER MENU --}}
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                {{-- FINE HAMBURGER MENU --}}
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
-                        </li>
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
-                        </li>
         
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
-                                <a class="dropdown-item" href="{{ route('admin.resturants') }}">{{__('Il tuo Ristorante')}}</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+    </head>
+    <body>
+        <div id="app">
+            {{-- INIZIO NAVBAR --}}
+            <nav class="navbar navbar-expand-md">
+                <div class="container">
+                    {{-- LOGO --}}
+                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                        <div class="">
+                            LOGO
+                        </div>
+                        {{-- config('app.name', 'Laravel') --}}
+                    </a>
+                    {{-- HAMBURGER MENU --}}
+                    <button class="navbar-toggler hamburger_menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    {{-- FINE HAMBURGER MENU --}}
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav me-auto ">
+                            {{-- HOME --}}
+                            <li class="nav-item nav_item_hover">
+                                <a class="nav-link text-white fs-5 p-1" href="{{url('/') }}">{{ __('Home') }}</a>
+                            </li>
+                        </ul>
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- ACCEDI -->
+                            @guest
+                            <li class="nav-item nav_item_hover">
+                                <a class="nav-link text-white fs-5 p-1" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                            </li>
+                            {{-- DROP DOWN MENU --}}
+                            @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        {{-- FINE NAVBAR --}}
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
+                                    <a class="dropdown-item" href="{{ route('admin.resturant') }}">{{__('Il tuo Ristorante')}}</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
-        <main class="">
-            @yield('content')
-        </main>
-
-        {{-- FOOTER --}}
-        {{-- <footer>
-            <div class="bg-black py-3">
-                <div class="content">
-                    <div class="container text-light">
-                        <p class="m-0">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus,facilis illum rerum officiis accusamus dolores!
-                        </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endguest
+                        </ul>
                     </div>
                 </div>
-            </div>
-
-        </footer> --}}
-        {{-- FINE FOOTER --}}
-    </div>
-</body>
+            </nav>
+            {{-- FINE NAVBAR --}}
+            <main class="">
+                @yield('content')
+            </main>
+        </div>
+    </body>
 
 </html>

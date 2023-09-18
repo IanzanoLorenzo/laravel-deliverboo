@@ -1,26 +1,55 @@
-$dark: #121f3f;
-$danger: #d05c4f;
-$primary: #426dda;
-$warning: #fdd379;
-
+//COLOR PALETTE
+$dark: rgb(20, 20, 20);
+$danger: #ff0000;
+$primary: #ac0a55;
+$warning:  #ff8800;
+//FINE COLLOR PALETTE
 @import '~bootstrap/scss/bootstrap';
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;1,300;1,600;1,800&display=swap');
 
+body{
+    background: linear-gradient(20deg , $danger  60%, $warning 60%);
+    font-family: 'Montserrat', sans-serif;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
 
+//STYLE UTILITIES
+.button_delive{
+    background-color: rgb(255, 255, 255);
+}
+.button_delive:hover{
+    background: none;
+    border:1px solid white;
+    color:white;
+}
+//FINE STYLE
 
- // color:#f77e70;
-// html{
-//     min-height: 100vh;
-// }
+//*****NAVBAR*****/
+.nav_item_hover:hover{
+    font-weight: 800;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.322);
+    border-width:thin;
+}
+//*****FINE NAVBAR*****/
 
-// footer{
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-// }
+//******HOME PAGE******/
+.hamburger_menu{
+    padding: 3px !important;
+    box-shadow:none!important;
+} 
+.hamburger_menu:hover{
+    background-color: white !important;
+}
 
+.shadow_title{
+    text-shadow: 3px 3px white ;
+}
+.hr_style{
+    border: 1px solid white;
+    opacity: 0.40;
+}
+//******FINE HOME PAGE******/
 
-
-//FINE PALETTE COLOR
 
