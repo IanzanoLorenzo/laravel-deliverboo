@@ -27,7 +27,7 @@ class ResturantController extends Controller
         $user = User::find($id);
 
         $resturant = Resturant::where('user_id', '=', $id)->with('types')->get()->first();
-
+        
         return view('admin.resturants.index', compact('user', 'resturant'));
     }
 

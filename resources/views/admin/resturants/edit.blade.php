@@ -29,13 +29,14 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    {{-- IMMAGINE RISTORANTE --}}
                     <div class="form-group p-3">
                         <label class="contol-label">Immagine</label>
                         <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is-invalid @enderror" placeholder="Inserisci il prezzo">
                         @error('cover_image')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror 
-                        <img class="img-thumbnail" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
+                        <img class="img-thumbnail rounded-circle img_resturant" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
                     </div>
                     <button type="submit" class="btn btn-primary m-3">Modifica Ristorante</button>  
                     <a href="{{ route('admin.resturants') }}" class="btn btn-primary">Torna al Ristorante</a>

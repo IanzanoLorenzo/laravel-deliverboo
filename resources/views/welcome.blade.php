@@ -40,9 +40,11 @@
             </div>
             {{-- Pulsante Registrati --}}
             @if (Route::has('register'))
-                <a href="{{ route('register')}}" class="button_delive btn btn-lg" type="button">
-                    Registrati
-                </a>
+                <div class="d-flex justify-content-center justify-content-md-start mt-4 mt-md-0">
+                    <a href="{{ route('register')}}" class="button_delive btn btn-lg" type="button">
+                        Registrati
+                    </a>
+                </div>
             @endif
             
         </div>

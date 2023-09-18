@@ -17,13 +17,24 @@ body{
 
 //STYLE UTILITIES
 .button_delive{
-    background-color: rgb(255, 255, 255);
+    background-color: white;
 }
 .button_delive:hover{
     background: none;
     border:1px solid white;
     color:white;
 }
+
+.button_delive_two{
+    background-color: $primary;
+    color: white;
+}
+.button_delive_two:hover{
+    background: none;
+    border:1px solid white;
+    color:white;
+}
+
 //FINE STYLE
 
 //*****NAVBAR*****/
@@ -52,4 +63,11 @@ body{
 }
 //******FINE HOME PAGE******/
 
+//PAGINA RISTORANTE//
+.img_resturant{
+    width: 150px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
 
+//FINE PAGINA RISTORANTE//
