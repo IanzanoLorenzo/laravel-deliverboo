@@ -4,11 +4,19 @@
 @section('content')
 
     {{-- JUMBOTRON --}}
-    <div class="container-fluid">
+    <div class="container-fluid jumbotron">
         {{-- Titolone --}}
+        @guest
         <h1 class="text-light display-5 fw-bold text-center mt-4">
             Ben arrivato nel tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
         </h1>
+        @endguest
+        @auth
+        <h1 class="text-light display-5 fw-bold text-center mt-4">
+            Ben tornato nel tuo gestionale <em>{{Auth::user()->name}}</em>
+        </h1>
+        @endauth
+
         <div class="container py-3">
             <hr class="text-white hr_style">
             <div class="row">
