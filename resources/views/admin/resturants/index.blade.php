@@ -8,7 +8,7 @@
             {{-- NOME RISTORANTE --}}
             <h4 class="text-center text-white mb-4">Gestisci qui il menù del tuo ristorante <em class="text-dark">{{ $resturant->name }}</em>.</h4>
 
-            {{-- *********** WIP ************  --}}
+            {{-- TIPI RISTORANTE --}}
             <ul class="list-unstyled">
                 @foreach($resturant->types as $type)
                     <li>
@@ -16,7 +16,7 @@
                     </li>
                 @endforeach
             </ul>
-            {{-- *********** WIP  *************--}}
+            {{-- FINE TIPI RISTORANTE --}}
         </div>
 
         {{-- PIATTI --}}
@@ -40,8 +40,6 @@
             </div>
         </div>
         @endforeach
-        @foreach ($resturant->types as $type)
-            {{$type->name}}
-        @endforeach
+        {{-- FINE PIATTI --}}
     </div>
 @endsection
