@@ -48,6 +48,9 @@
                             @endif>
                             <label class="btn btn-outline-danger" for="visibility2">Non visibile</label>
                         </div>
+                        @error('visibility')
+                        <div class="text-danger ">{{ $message }}</div>
+                        @enderror 
                     </div>
                     <button type="submit" class="btn btn-primary m-3">Modifica piatto</button>  
                     <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Annulla modifica</a>

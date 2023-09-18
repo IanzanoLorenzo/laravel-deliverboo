@@ -19,10 +19,10 @@
                             <th scope="col">
                                 Nome Piatto
                             </th>
-                            <th scope="col">
+                            <th scope="col" class="d-none d-md-table-cell">
                                 Prezzo
                             </th>
-                            <th scope="col">
+                            <th scope="col" class="d-none d-md-table-cell">
                                 Visibile
                             </th>
                             <th class="text-center" scope="col">
@@ -34,8 +34,8 @@
                         @foreach ($resturant->dishes as $dish)
                         <tr>
                             <td>{{$dish->name}}</td>
-                            <td>{{$dish->price}}&euro;</td>
-                            <td>{{ $dish->visibility ? 'Sì' : 'No' }}</td>
+                            <td class="d-none d-md-table-cell">{{$dish->price}}&euro;</td>
+                            <td class="d-none d-md-table-cell">{{ $dish->visibility ? 'Sì' : 'No' }}</td>
                             <td class="text-center">
                                 <a href="{{ route('admin.dishes.show', $dish ) }}" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
                                 <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>

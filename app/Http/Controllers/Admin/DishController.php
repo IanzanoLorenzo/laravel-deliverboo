@@ -123,6 +123,7 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
+        $dish->orders()->detach();
         $dish->delete();
         return redirect()->route('admin.dishes.index')->with('message', 'Eliminazione avvenuta con successo');
     }
