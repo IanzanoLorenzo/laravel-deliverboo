@@ -32,9 +32,9 @@ class UpdateResturantRequest extends FormRequest
 
     public function messages(){
         return [
-            'resturant_name.required' => 'Il campo nome ristorante è obbligatorio',
-            'resturant_name.string' => 'Il campo nome ristorante deve essere una stringa',
-            'resturant_name.max' => 'Il campo nome ristorante può avere al massimo :max caratteri',
+            'name.required' => 'Il campo nome ristorante è obbligatorio',
+            'name.string' => 'Il campo nome ristorante deve essere una stringa',
+            'name.max' => 'Il campo nome ristorante può avere al massimo :max caratteri',
         
             'address.required' => 'Il campo indirizzo è obbligatorio',
             'address.string' => 'Il campo indirizzo deve essere una stringa',
