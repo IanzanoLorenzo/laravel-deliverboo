@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="col-12">
-            <h2 class="fs-4 text-secondary my-4">
+            <h2 class="text-white text-center my-4">
                 Crea il tuo nuovo Piatto
             </h2>
         </div>

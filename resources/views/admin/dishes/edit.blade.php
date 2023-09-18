@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <div class="col-12">
-            <h2 class="fs-4 text-secondary my-4">
-                Modifica {{ $dish->name }}
-            </h2>
+            <h1 class=" text-white text-center my-4">
+                Modifica "{{ $dish->name }}"
+            </h1>
         </div>
         <div class="col-12">
             <div class="text-center">

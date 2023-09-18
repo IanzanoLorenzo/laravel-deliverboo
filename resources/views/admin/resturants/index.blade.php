@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         {{-- UTENTE RISTORATORE --}}
-        <h2 class="text-center text-white"> Ciao <span class="text-dark">{{ $user->name }}</span>!</h2>
+        <h2 class="text-center text-white"> Benvenuto <span class="text-dark">{{ $user->name }}</span>!</h2>
         {{-- NOME RISTORANTE --}}
         <h4 class="text-center text-white mb-4">Gestisci qui il menù del tuo ristorante <em class="text-dark">{{ $resturant->name }}</em>.</h4>
         <div class="row justify-content-center">
@@ -36,6 +36,7 @@
                     {{-- PULSANTE EDIT RISTORANTE --}}
                     <a href="{{ route('admin.resturants.edit')}}" class="button_delive_two btn btn-sm d-flex align-items-center" type="button">
                         Modifica Ristorante
+                        <i class="fa-solid fa-arrow-turn-up ms-1" style="color: #ffffff;"></i>
                     </a>
                 </div>
                 
