@@ -60,7 +60,7 @@
                         @error('cover_image')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror 
-                        <img class="img-thumbnail rounded-circle img_resturant my-3" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
+                        <img class="img-thumbnail rounded-circle img_resturant mt-3" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
                     </div>
                     {{-- PULSANTE --}}
                     <button type="submit" class="btn btn-primary m-3">
