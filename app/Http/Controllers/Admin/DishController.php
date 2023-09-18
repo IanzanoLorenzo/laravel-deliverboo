@@ -125,6 +125,6 @@ class DishController extends Controller
     {
         $dish->orders()->detach();
         $dish->delete();
-        return redirect()->route('admin.dishes.index')->with('message', 'Eliminazione avvenuta con successo');
+        return redirect()->route('admin.dishes.index')->with('error', 'Eliminazione avvenuta con successo');
     }
 }

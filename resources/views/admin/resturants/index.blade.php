@@ -41,6 +41,11 @@
                 </div>
                 
             </div>
+            @if (session('message'))
+            <div class="alert alert-success col-12 col-md-8 mt-3">
+                {{session('message')}}
+            </div>
+            @endif
         </div>
 
         <div class="row mb-5 mt-5">

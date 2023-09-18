@@ -9,6 +9,11 @@
         </a>
     </div>
     <h2 class="text-white text-center">Visualizza i dettagli del tuo piatto</h2>
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+    @endif
     <div class="card my-5 p-4">
 
         {{-- NOME PIATTO --}}
@@ -17,11 +22,6 @@
             
             <h3>&euro;{{$dish->price}}</h3>
         </div>
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{session('message')}}
-            </div>
-        @endif
         <div class="row">
         
             <div class="col-12 card-body">

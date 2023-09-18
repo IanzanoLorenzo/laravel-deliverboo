@@ -7,6 +7,11 @@
             Il tuo Men&uacute;
         </h2>
     </div>
+    @if (session('error'))
+    <div class="alert alert-danger">
+        {{session('error')}}
+    </div>
+    @endif
     <div class="col-12 d-flex justify-content-end py-3 ">
         <a href="{{route('admin.dishes.create')}}" class="btn btn-primary">Nuovo Piatto</a>
     </div>

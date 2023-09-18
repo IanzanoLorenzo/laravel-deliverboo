@@ -107,7 +107,7 @@ class ResturantController extends Controller
             $resturant->types()->detach();
         }
 
-        return redirect()->route('admin.resturants');
+        return redirect()->route('admin.resturants')->with('message', 'Ristorante modificato con successo');
     }
 
     /**
