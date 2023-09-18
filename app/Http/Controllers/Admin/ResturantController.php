@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Resturant;
+use App\Models\User;
+use App\Models\Type;
 use App\Http\Requests\StoreResturantRequest;
 use App\Http\Requests\UpdateResturantRequest;
-use App\Models\User;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -73,7 +75,10 @@ class ResturantController extends Controller
     {
         $id = Auth::id();
         $resturant = Resturant::where('user_id', $id)->get()->first();
-        return view('admin.resturants.edit', compact('resturant'));
+
+        $types = Type::all();
+        return view('admin.resturants.edit', compact('resturant','types'));
+
     }
 
     /**
@@ -95,7 +100,12 @@ class ResturantController extends Controller
         }
         $form_data['slug'] = Str::slug($form_data['name']);
         $resturant->update($form_data);
-        return redirect()->route('admin.dishes.index');
+
+        if($request->has('type_name')){
+            $resturant->types()->sync($request->type_name);
+        }
+
+        return redirect()->route('admin.resturants');
     }
 
     /**
