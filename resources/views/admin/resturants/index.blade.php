@@ -42,33 +42,37 @@
 
         <div class="row mb-5 mt-5">
             <div class="col-12 col-md-8 offset-md-2 px-4">
-                <ul class="list-group list-group-flush">
-                    {{-- MENU --}}
-                    <li class="list-group-item">
-                        <h2 class="text-center">
-                            Men&uacute;
-                        </h2>
-                    </li>
-                    @foreach ($resturant->dishes as $item)
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between mt-2">
-                            {{-- NOME PIATTO --}}
-                            <h4 class=" text-primary">
-                                {{$item->name}}
-                            </h4>
-                            <span class="fs-6 text-dark">
-                            {{-- PREZZO --}}
-                                &euro;{{ $item->price}}
-                            </span>
-                        </div>
-                        
-                        {{-- INGREDIENTI --}}
-                        <p>
-                            {{ $item->ingredients}}
-                        </p>  
-                    </li>
-                    @endforeach
-                </ul>
+                @if(count($resturant->dishes) !== 0)
+                    
+                    <ul class="list-group list-group-flush">
+                        {{-- MENU --}}
+                        <li class="list-group-item">
+                            <h2 class="text-center">
+                                Men&uacute;
+                            </h2>
+                        </li>
+                        @foreach ($resturant->dishes as $item)
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between mt-2">
+                                {{-- NOME PIATTO --}}
+                                <h4 class=" text-primary">
+                                    {{$item->name}}
+                                </h4>
+                                <span class="fs-6 text-dark">
+                                {{-- PREZZO --}}
+                                    &euro;{{ $item->price}}
+                                </span>
+                            </div>
+                            
+                            {{-- INGREDIENTI --}}
+                            <p>
+                                {{ $item->ingredients}}
+                            </p>  
+                        </li>
+                        @endforeach
+                    </ul>
+                @endif
+                
             </div>
         </div>
         
