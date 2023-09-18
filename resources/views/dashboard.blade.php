@@ -27,7 +27,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 mt-4"><a href="{{ route('admin.dishes.index' )}}" class="btn btn-primary">Visualizza il tuo Men&uacute;</a></div>
+
+        <div class="col-12 mt-4">
+            <a href="{{ route('admin.resturants' )}}" class="btn btn-primary">
+                Visualizza il tuo Men&uacute;
+            </a>
+        </div>
+
     </div>
 </div>
 @endsection

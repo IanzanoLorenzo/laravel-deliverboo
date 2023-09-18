@@ -29,15 +29,39 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                
+                    {{-- Tipologia --}}
+                    <div class="form-group p-3">
+                        <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }}</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                {{-- CHECKBOX --}}
+                                @foreach ($types as $type)
+                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" {{( in_array($type->id, old('type', []))) ? 'checked' : ''}}>
+                                    <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
+                                @endforeach
+                            </div>
+                            @error('type_name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                
+                    {{-- IMMAGINE RISTORANTE --}}
                     <div class="form-group p-3">
                         <label class="contol-label">Immagine</label>
                         <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is-invalid @enderror" placeholder="Inserisci il prezzo">
                         @error('cover_image')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror 
-                        <img class="img-thumbnail" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
+                        <img class="img-thumbnail rounded-circle img_resturant" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
                     </div>
-                    <button type="submit" class="btn btn-primary m-3">Modifica Ristorante</button>  
+                    {{-- PULSANTE --}}
+                    <button type="submit" class="btn btn-primary m-3">
+                        Modifica Ristorante
+                    </button>  
                     <a href="{{ route('admin.resturants') }}" class="btn btn-primary">Torna al Ristorante</a>
                 </form>
             </div>
