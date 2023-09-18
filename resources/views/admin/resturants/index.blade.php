@@ -11,11 +11,13 @@
             <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
                 <ul class="list-unstyled text-center">
-                    @foreach($resturant->types as $type)
-                        <li>
-                            {{$type->name}}
-                        </li>
-                    @endforeach
+                    @forelse ($resturant->types as $type)
+                    <li>
+                        {{$type->name}}
+                    </li>
+                    @empty
+                    <li>Nessun tipo selezionato</li>
+                    @endforelse
                 </ul>
             </div>
 

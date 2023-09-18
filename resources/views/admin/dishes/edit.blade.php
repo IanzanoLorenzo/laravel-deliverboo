@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary m-3">Modifica piatto</button>  
-                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Torna alla lista piatti</a>
+                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Annulla modifica</a>
                 </form>
             </div>
         </div>

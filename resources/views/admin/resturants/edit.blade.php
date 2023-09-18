@@ -37,7 +37,11 @@
                             <div class="input-group">
                                 {{-- CHECKBOX --}}
                                 @foreach ($types as $type)
-                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" {{( in_array($type->id, old('type', []))) ? 'checked' : ''}}>
+                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" @if ($errors->any())
+                                    {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}
+                                    @else
+                                    {{ $resturant->types->contains($type->id) ? 'checked' : '' }}
+                                    @endif>
                                     <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
                                 @endforeach
                             </div>
@@ -56,13 +60,13 @@
                         @error('cover_image')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror 
-                        <img class="img-thumbnail rounded-circle img_resturant" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
+                        <img class="img-thumbnail rounded-circle img_resturant my-3" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
                     </div>
                     {{-- PULSANTE --}}
                     <button type="submit" class="btn btn-primary m-3">
                         Modifica Ristorante
                     </button>  
-                    <a href="{{ route('admin.resturants') }}" class="btn btn-primary">Torna al Ristorante</a>
+                    <a href="{{ route('admin.resturants') }}" class="btn btn-primary">Annulla Modifica</a>
                 </form>
             </div>
         </div>

@@ -103,6 +103,8 @@ class ResturantController extends Controller
 
         if($request->has('type_name')){
             $resturant->types()->sync($request->type_name);
+        }else{
+            $resturant->types()->detach();
         }
 
         return redirect()->route('admin.resturants');
