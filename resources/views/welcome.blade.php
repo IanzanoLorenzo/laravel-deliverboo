@@ -11,9 +11,10 @@
             Ben arrivato nel tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
         </h1>
         @endguest
+        {{-- NOME UTENTE AUTENTICATO --}}
         @auth
         <h1 class="text-light display-5 fw-bold text-center mt-4">
-            Ben tornato nel tuo gestionale <em>{{Auth::user()->name}}</em>
+            Ben tornato nel tuo gestionale <span class="text-dark">{{Auth::user()->name}}</span>
         </h1>
         @endauth
 
