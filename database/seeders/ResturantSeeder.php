@@ -25,6 +25,7 @@ class ResturantSeeder extends Seeder
             $resturant->address = $item['address'];
             $resturant->cover_image = $item['cover_image'];
             $resturant->save();
+            $resturant->types()->attach($item['types']);
         }
     }
 }
