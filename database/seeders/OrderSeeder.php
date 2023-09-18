@@ -38,7 +38,7 @@ class OrderSeeder extends Seeder
                 $order_dish->order_id = $new_order->id;
                 $order_dish->dish_id = $dish['dish_id'];
                 $order_dish->n_dish = $dish['n_dish'];
-                $total_price = $dishes[$dish['dish_id'] - 1]->price * $dish['n_dish'];
+                $total_price += $dishes[$dish['dish_id'] - 1]->price * $dish['n_dish'];
                 $order_dish->save();
             };
             $new_order->total_price = $total_price;
