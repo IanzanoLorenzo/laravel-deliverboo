@@ -8,7 +8,7 @@
         <h4 class="text-center text-white mb-4">Gestisci qui il menù del tuo ristorante <em class="text-dark">{{ $resturant->name }}</em>.</h4>
         <div class="row justify-content-center">
 
-            <div class="col-12 col-md-4 ">
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
                 <ul class="list-unstyled text-center">
                     @foreach($resturant->types as $type)
