@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -81,7 +82,8 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'resturant_name' => ['required' , 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
-            'cover_image' => ['image']
+            'cover_image' => ['image'],
+            'type_name' => ['required', 'array', Rule::exists('types', 'id')->whereIn('id', $request->input('type_name'))]
         ], $messages);
 
 
@@ -90,7 +92,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'surname' => $request->surname,
             'email' => $request->email,
-            'vat_number' => $request->vat_number,
+            'vat_number' => 'IT'.$request->vat_number,
             'password' => Hash::make($request->password),
         ]);
 
@@ -106,6 +108,8 @@ class RegisteredUserController extends Controller
 
         if($request->hasFile('cover_image')){
         $path = Storage::put('cover_images', $request->cover_image);
+        }else{
+            $path = null;
         }
 
         /* SALVATAGGIO RISTORANTE */

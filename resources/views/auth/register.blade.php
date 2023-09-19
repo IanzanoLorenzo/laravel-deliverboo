@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="mb-4 row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }} *</label>
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                             </div>
@@ -141,7 +141,7 @@
                                         <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
                                     @endforeach
                                 </div>
-                                @error('type_name')
+                                @error('type_name[]')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
