@@ -4,7 +4,7 @@
 <div class="container">
     <div class="col-12">
         <h2 class="my-4 text-center fs-1">
-            Il tuo Men&uacute;
+            Modifica i tuoi <strong class="text-uppercase">Piatti</strong>
         </h2>
     </div>
     @if (session('error'))
@@ -12,8 +12,12 @@
         {{session('error')}}
     </div>
     @endif
-    <div class="col-12 d-flex justify-content-end py-3 ">
+    {{-- PULSANTE NUOVO PIATTO --}}
+    <div class="col-12 d-flex justify-content-between py-3 ">
+
         <a href="{{route('admin.dishes.create')}}" class="btn btn-primary">Nuovo Piatto</a>
+
+        <a href="{{route('admin.dishes.create')}}" class="btn btn-primary">Torna al men&uacute;</a>
     </div>
     <div class="col-12">
         <div class="card">
