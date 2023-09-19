@@ -17,7 +17,7 @@
 
         <a href="{{route('admin.dishes.create')}}" class="btn btn-primary">Nuovo Piatto</a>
 
-        <a href="{{route('admin.dishes.create')}}" class="btn btn-primary">Torna al men&uacute;</a>
+        <a href="{{route('admin.resturants')}}" class="btn btn-primary">Torna al men&uacute;</a>
     </div>
     <div class="col-12">
         <div class="card">
