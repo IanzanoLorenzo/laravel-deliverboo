@@ -26,7 +26,7 @@ class StoreDishRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'ingredients' => ['required', 'string'],
-            'price' => ['required', 'numeric'],
+            'price' => ['required', 'numeric', 'between:0,999.99'],
             'visibility' => ['required', 'boolean']
         ];
     }
@@ -41,6 +41,7 @@ class StoreDishRequest extends FormRequest
 
             'price.required' => 'Il campo prezzo è obbligatorio',
             'price.numeric' => 'Il campo prezzo deve essere un numero',
+            'price.between' => 'Il campo prezzo deve essere positivo e non superiore a 999.99',
 
             'visibility.required' => 'Il campo visibilità è obbligatorio',
             'visibility.boolean' => 'Il campo visibilità deve essere un valore booleano',

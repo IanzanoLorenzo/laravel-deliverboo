@@ -45,7 +45,7 @@
                             <label class="control-label">Visibilità *</label>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="visibility" id="visibility1" autocomplete="off" value="1" @if ($dish->visibility)
+                            <input type="radio" class="btn-check" name="visibility" id="visibility1" autocomplete="off" value="1" required @if ($dish->visibility)
                             {{'checked'}}
                         @endif>
                             <label class="btn btn-outline-success" for="visibility1">Visibile</label>

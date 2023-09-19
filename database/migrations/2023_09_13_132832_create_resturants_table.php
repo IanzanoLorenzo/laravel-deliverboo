@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('slug', 60);
             $table->string('address');
-            $table->string('cover_image');
+            $table->string('cover_image')->nullable();
             $table->timestamps();
         });
     }
