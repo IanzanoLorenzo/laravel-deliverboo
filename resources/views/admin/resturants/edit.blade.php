@@ -63,11 +63,13 @@
                         @enderror 
                         <img class="img-thumbnail rounded-circle img_resturant mt-3" src="{{asset('storage/'.$resturant->cover_image)}}" alt="">
                     </div>
-                    {{-- PULSANTE --}}
+                    {{-- PULSANTI --}}
                     <button type="submit" class="btn btn-primary m-3">
                         Modifica Ristorante
                     </button>  
-                    <a href="{{ route('admin.resturants') }}" class="btn btn-primary">Annulla Modifica</a>
+                    <a href="{{ route('admin.resturants') }}" class="btn btn-danger text-white">
+                        Annulla Modifica
+                    </a>
                 </form>
             </div>
         </div>

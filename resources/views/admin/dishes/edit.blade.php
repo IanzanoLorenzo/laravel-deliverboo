@@ -59,8 +59,10 @@
                         <div class="text-danger ">{{ $message }}</div>
                         @enderror 
                     </div>
-                    <button type="submit" class="btn btn-primary m-3">Modifica piatto</button>  
-                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Annulla modifica</a>
+                    
+                    <button type="submit" class="btn btn-primary m-3">Modifica piatto</button>
+                    {{-- PULSANTE ANNULLA MODIFICA --}}
+                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-danger text-white">Annulla modifica</a>
                 </form>
             </div>
         </div>
