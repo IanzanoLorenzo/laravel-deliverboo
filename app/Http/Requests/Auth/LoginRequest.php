@@ -32,6 +32,17 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    public function messages(){
+        return [
+            'email.required' => 'Il campo email è obbligatorio',
+            'email.string' => 'Il campo email deve essere una stringa',
+            'email.email' => 'Inserisci un indirizzo email valido',
+    
+            'password.required' => 'Il campo password è obbligatorio',
+            'password.string' => 'Il campo password deve essere una stringa',
+        ];
+    }
+
     /**
      * Attempt to authenticate the request's credentials.
      *

@@ -38,7 +38,7 @@
                             <div class="input-group">
                                 {{-- CHECKBOX --}}
                                 @foreach ($types as $type)
-                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" required @if ($errors->any())
+                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" @if ($errors->any())
                                     {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}
                                     @else
                                     {{ $resturant->types->contains($type->id) ? 'checked' : '' }}
