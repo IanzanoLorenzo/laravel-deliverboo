@@ -23,7 +23,7 @@
 
             <div class="col-12 col-md-4 d-flex justify-content-center">
                 {{-- FOTO RISTORANTE --}}
-                <img class="rounded-circle img_resturant" src="{{ asset( 'storage/'.$resturant->cover_image)}}" alt="{{$resturant->name}}">
+                <img class="rounded-circle img_resturant" src="@if($resturant->cover_image !== null){{ asset( 'storage/'.$resturant->cover_image)}}@else {{ asset( 'storage/cover_images/default.png')}}@endif" alt="{{$resturant->name}}">
             </div>
             <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
 
