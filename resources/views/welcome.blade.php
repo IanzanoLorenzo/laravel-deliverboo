@@ -4,7 +4,7 @@
 @section('content')
 
     {{-- JUMBOTRON --}}
-    <div class="container-fluid jumbotron">
+    <div class="container-fluid">
         {{-- Titolone --}}
         @guest
         <h1 class="text-light display-5 fw-bold text-center mt-4">

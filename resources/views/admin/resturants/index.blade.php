@@ -60,7 +60,7 @@
                             </h2>
                         </li>
                         @foreach ($resturant->dishes as $item)
-                        <li class="list-group-item">
+                        <li class="list-group-item @if(!$item->visibility) list-group-item-secondary @endif">
                             <div class="d-flex justify-content-between mt-2">
                                 {{-- NOME PIATTO --}}
                                 <h4 class=" text-primary">

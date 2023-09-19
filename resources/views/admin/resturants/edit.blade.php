@@ -12,19 +12,20 @@
                 <a href="{{ route('dashboard') }}" class="btn button_delive_two m-3">Torna alla dashboard</a>
             </div>
             <div class="card">
+                <p class="text-center text-secondary">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
                 <form action="{{route('admin.resturants.update', $resturant)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group p-3">
-                        <label class="control-label">Nome Ristorante</label>
-                        <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Inserisci il nome del piatto" value="{{ old('name') ?? $resturant->name }}">
+                        <label class="control-label">Nome Ristorante *</label>
+                        <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Inserisci il nome del piatto" value="{{ old('name') ?? $resturant->name }}" required>
                         @error('name')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group p-3">
-                        <label class="control-label">Indirizzo</label>
-                        <input type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" placeholder="Inserisci gli ingredienti" value="{{ old('address') ?? $resturant->address }}">
+                        <label class="control-label">Indirizzo *</label>
+                        <input type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" placeholder="Inserisci gli ingredienti" value="{{ old('address') ?? $resturant->address }}" required>
                         @error('address')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -32,12 +33,12 @@
                 
                     {{-- Tipologia --}}
                     <div class="form-group p-3">
-                        <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }}</label>
+                        <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }} *</label>
                         <div class="col-md-6">
                             <div class="input-group">
                                 {{-- CHECKBOX --}}
                                 @foreach ($types as $type)
-                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" @if ($errors->any())
+                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" required @if ($errors->any())
                                     {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}
                                     @else
                                     {{ $resturant->types->contains($type->id) ? 'checked' : '' }}

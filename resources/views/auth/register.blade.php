@@ -12,12 +12,13 @@
                         @csrf
                         {{--DATI UTENTE --}}
                         <h2 class="text-center title_form">Inserisci i tuoi dati</h2>
+                        <p class="text-center text-secondary">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
                         {{-- INIZIO INPUT-FORM --}}
                         <div class="mb-4 row">
                             {{-- Nome --}}
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }} *</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus required>
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -27,9 +28,9 @@
                         </div>
                         <div class="mb-4 row">
                             {{-- Cognome --}}
-                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}</label>
+                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }} *</label>
                             <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" autocomplete="surname" autofocus>
+                                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" autocomplete="surname" autofocus required>
                                 @error('surname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -39,9 +40,9 @@
                         </div>
                         <div class="mb-4 row">
                             {{-- E-mail --}}
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo E-Mail') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo E-Mail') }} *</label>
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" required>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -51,9 +52,9 @@
                         </div>
                         <div class="mb-4 row">
                             {{-- Password --}}
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }} *</label>
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password" required>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -69,11 +70,13 @@
                         </div>
                         <div class="mb-4 row">
                             {{-- Partita Iva --}}
-                            <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva') }}</label>
+                            <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva') }} *</label>
 
                             <div class="col-md-6">
-                                <input id="vat_number" type="text" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" autocomplete="new-vat_number" value="{{ old('vat_number') }}">
-
+                                <div class="input-group">
+                                    <span class="input-group-text">IT</span>
+                                    <input id="vat_number" type="text" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" placeholder="11 CIFRE NUMERICHE (es.12345678910)" autocomplete="new-vat_number" value="{{ old('vat_number') }}" pattern="[0-9]{11}" required>
+                                </div>
                                 @error('vat_number')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -86,9 +89,9 @@
                         <h2 class="text-center title_form mt-5">Inserisci i dati del tuo ristorante</h2>
                         <div class="mb-4 row">
                             {{-- Nome ristorante --}}
-                            <label for="resturant_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante') }}</label>
+                            <label for="resturant_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante') }} *</label>
                             <div class="col-md-6">
-                                <input id="resturant_name" type="text" class="form-control @error('resturant_name') is-invalid @enderror" name="resturant_name" autocomplete="new-resturant_name" value="{{ old('resturant_name') }}">
+                                <input id="resturant_name" type="text" class="form-control @error('resturant_name') is-invalid @enderror" name="resturant_name" autocomplete="new-resturant_name" value="{{ old('resturant_name') }}" required>
                                 @error('resturant_name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -99,10 +102,10 @@
 
                         <div class="mb-4 row">
                             {{-- Via del ristorante --}}
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }} *</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" autocomplete="new-address" value="{{ old('address') }}">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" autocomplete="new-address" value="{{ old('address') }}" required>
 
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
@@ -128,13 +131,13 @@
                         </div>
                         <div class="mb-4 row">
                             {{-- Tipologia --}}
-                            <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }}</label>
+                            <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }} *</label>
 
                             <div class="col-md-6">
                                 <div class="input-group">
                                     {{-- CHECKBOX --}}
                                     @foreach ($types as $type)
-                                        <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" {{( in_array($type->id, old('type', []))) ? 'checked' : ''}}>
+                                        <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}>
                                         <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
                                     @endforeach
                                 </div>

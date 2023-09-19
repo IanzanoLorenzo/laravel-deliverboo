@@ -77,7 +77,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'vat_number' => ['required', 'string', 'max:13', 'min:13', 'unique:'.User::class],
+            'vat_number' => ['required', 'string', 'max:11', 'min:11', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'resturant_name' => ['required' , 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
