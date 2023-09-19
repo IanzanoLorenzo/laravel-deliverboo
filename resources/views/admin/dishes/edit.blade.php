@@ -9,7 +9,7 @@
         </div>
         <div class="col-12">
             <div class="text-center">
-                <a href="{{ route('dashboard') }}" class="btn btn-success m-3">Torna alla dashboard</a>
+                <a href="{{ route('dashboard') }}" class="btn button_delive_two m-3">Torna alla dashboard</a>
             </div>
             <div class="card">
                 <form action="{{route('admin.dishes.update', $dish)}}" method="POST" enctype="multipart/form-data">
