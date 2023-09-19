@@ -27,13 +27,21 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="col-12 mt-4">
-            <a href="{{ route('admin.resturants' )}}" class="btn btn-primary">
+    <div class="row">
+        {{-- PULSANTE RISTORANTE --}}
+        <div class="col-12 col-md-auto mt-4">
+            <a href="{{ route('admin.resturants' )}}" class="btn button_delive_two">
                 Visualizza il tuo Men&uacute;
             </a>
         </div>
-
+        {{-- PULSANTE EDIT PIATTI --}}
+        <div class="col-12 col-md-6 mt-4">
+            <a href="{{ route('admin.dishes.index' )}}" class="btn button_delive_two">
+                Modifica i tuoi piatti
+            </a>
+        </div>
     </div>
 </div>
 @endsection

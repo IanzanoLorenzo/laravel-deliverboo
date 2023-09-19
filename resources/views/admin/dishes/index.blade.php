@@ -4,7 +4,7 @@
 <div class="container">
     <div class="col-12">
         <h2 class="my-4 text-center fs-1">
-            Il tuo Men&uacute;
+            Modifica i tuoi <strong class="text-uppercase">Piatti</strong>
         </h2>
     </div>
     @if (session('error'))
