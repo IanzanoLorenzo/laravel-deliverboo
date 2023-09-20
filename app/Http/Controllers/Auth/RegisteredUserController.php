@@ -87,7 +87,7 @@ class RegisteredUserController extends Controller
             'resturant_name' => ['required' , 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'cover_image' => ['image'],
-            'type_name' => ['required', 'array', 'exists:types']
+            'type_name' => ['required', 'array', 'exists:types,id']
         ], $messages);
 
         //SALVATAGGIO USER
