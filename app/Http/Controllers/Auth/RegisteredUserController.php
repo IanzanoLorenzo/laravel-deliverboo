@@ -82,7 +82,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email','regex:/^.+\..+@.+\..+$/i', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email','regex:/^.+@.+\..+$/i', 'max:255', 'unique:'.User::class],
             'vat_number' => ['required', 'string', 'max:11', 'min:11', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'resturant_name' => ['required' , 'string', 'max:255'],
