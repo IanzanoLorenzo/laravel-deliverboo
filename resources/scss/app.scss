@@ -34,7 +34,6 @@ body{
     border:1px solid white;
     color:white;
 }
-
 //FINE STYLE
 
 //*****NAVBAR*****/
@@ -45,13 +44,19 @@ body{
 }
 
 .nav_auth_hover:hover{
-    font-weight: 700;
     color: $primary !important;
     border-top: 1px solid rgba(177, 18, 79, 0.733);
     border-width:thin;
-
 }
 
+.nav_itemdrop_hover:hover{
+    background-color: $primary !important;
+    color: white;
+}
+
+.nav_drop_menu{
+    background-color: rgba(255, 255, 255, 0.301) !important;
+}
 //*****FINE NAVBAR*****/
 
 //******HOME PAGE******/
