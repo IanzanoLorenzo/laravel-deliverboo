@@ -60,7 +60,7 @@ class LoginRequest extends FormRequest
             // Controlla se l'email non esiste
             if (! User::where('email', $credentials['email'])->exists()) {
                 throw ValidationException::withMessages([
-                    'email' => 'L\'indirizzo email non esiste.',
+                    'email' => 'L\'indirizzo email non è registrato.',
                 ]);
             }
 
