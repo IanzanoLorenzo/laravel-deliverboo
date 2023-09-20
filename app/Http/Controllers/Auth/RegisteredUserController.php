@@ -73,7 +73,7 @@ class RegisteredUserController extends Controller
         
             'cover_image.image' => 'La copertina deve essere un file immagine',
 
-            'type_name.required' => 'Scegliere almeno un campo tipo',
+            'type_name.required' => 'Scegliere almeno una tipologia',
             'type_name.array' => 'Il campo tipo dev\'essere un array',
             'type_name.exists' => 'Il tipo scelto non esiste'
         ];
