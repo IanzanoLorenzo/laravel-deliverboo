@@ -16,7 +16,9 @@
                         {{$type->name}}
                     </li>
                     @empty
-                    <li>Nessun tipo selezionato</li>
+                    <li>
+                        Nessun tipo selezionato
+                    </li>
                     @endforelse
                 </ul>
             </div>

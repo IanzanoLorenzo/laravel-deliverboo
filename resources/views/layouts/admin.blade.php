@@ -55,10 +55,15 @@
                             {{-- DROP DOWN MENU --}}
                             @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{-- NOME UTENTE REGISTRATO --}}
+                                
+
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle  nav_auth_hover text-dark text-uppercase fs-5 p-1" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
+                                
+                                
+                                {{-- LISTA DROP DOWN --}}
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
                                     <a class="dropdown-item" href="{{ route('admin.resturants') }}">{{__('Il tuo Ristorante')}}</a>

@@ -39,7 +39,7 @@
         {{-- PULSANTE EDIT PIATTI --}}
         <div class="col-12 col-md-6 mt-4">
             <a href="{{ route('admin.dishes.index' )}}" class="btn button_delive_two">
-                Modifica i tuoi piatti
+                Visualizza i tuoi Piatti
             </a>
         </div>
     </div>

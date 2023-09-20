@@ -39,10 +39,19 @@ body{
 
 //*****NAVBAR*****/
 .nav_item_hover:hover{
-    font-weight: 800;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.322);
+    font-weight: 900;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.575);
     border-width:thin;
 }
+
+.nav_auth_hover:hover{
+    font-weight: 700;
+    color: $primary !important;
+    border-top: 1px solid rgba(177, 18, 79, 0.733);
+    border-width:thin;
+
+}
+
 //*****FINE NAVBAR*****/
 
 //******HOME PAGE******/
