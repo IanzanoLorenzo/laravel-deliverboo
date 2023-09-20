@@ -55,7 +55,7 @@ body{
 }
 
 .nav_drop_menu{
-    background-color: rgba(255, 255, 255, 0.301) !important;
+    background-color: rgba(245, 222, 179, 0.5);
 }
 //*****FINE NAVBAR*****/
 
@@ -85,3 +85,11 @@ body{
 }
 
 //FINE PAGINA RISTORANTE//
+
+
+//MEDIA QUERY//
+@media screen and ( min-width: 768px){
+    .nav_drop_menu{
+        background-color: rgb(255, 242, 220)
+    }
+}
