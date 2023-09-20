@@ -51,6 +51,7 @@ class RegisteredUserController extends Controller
             'email.email' => 'Inserisci un indirizzo email valido',
             'email.max' => 'L\'indirizzo email non può superare :max caratteri',
             'email.unique' => 'Questo indirizzo email è già in uso',
+            'email.regex' => 'Questo indirizzo email deve contenere almeno un punto dopo la @',
         
             'vat_number.required' => 'Il campo partita IVA è obbligatorio',
             'vat_number.string' => 'Il campo partita IVA deve essere una stringa',
@@ -81,7 +82,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email','regex:/^.+\..+@.+\..+$/i', 'max:255', 'unique:'.User::class],
             'vat_number' => ['required', 'string', 'max:11', 'min:11', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'resturant_name' => ['required' , 'string', 'max:255'],
