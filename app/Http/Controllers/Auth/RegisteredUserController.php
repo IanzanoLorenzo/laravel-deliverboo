@@ -71,6 +71,10 @@ class RegisteredUserController extends Controller
             'address.max' => 'Il campo indirizzo può avere al massimo :max caratteri',
         
             'cover_image.image' => 'La copertina deve essere un file immagine',
+
+            'type_name.required' => 'Scegliere almeno un campo tipo',
+            'type_name.array' => 'Il campo tipo dev\'essere un array',
+            'type_name.exists' => 'Il tipo scelto non esiste'
         ];
 
         //VALIDAZIONE
@@ -83,9 +87,8 @@ class RegisteredUserController extends Controller
             'resturant_name' => ['required' , 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'cover_image' => ['image'],
-            'type_name' => ['required', 'array', Rule::exists('types', 'id')->whereIn('id', $request->input('type_name'))]
+            'type_name' => ['required', 'array', 'exists:types']
         ], $messages);
-
 
         //SALVATAGGIO USER
         $user = User::create([
