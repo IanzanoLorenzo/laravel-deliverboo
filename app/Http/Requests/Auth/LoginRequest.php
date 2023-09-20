@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -52,15 +53,31 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
-            RateLimiter::hit($this->throttleKey());
+        $credentials = $this->only('email', 'password');
+        $remember = $this->boolean('remember');
+    
+        if (! Auth::attempt($credentials, $remember)) {
+            // Controlla se l'email non esiste
+            if (! User::where('email', $credentials['email'])->exists()) {
+                throw ValidationException::withMessages([
+                    'email' => 'L\'indirizzo email non esiste.',
+                ]);
+            }
 
+            if (! User::where('email', $credentials['password'])->exists()) {
+                throw ValidationException::withMessages([
+                    'email' => 'La password non è corretta.',
+                ]);
+            }
+    
+            RateLimiter::hit($this->throttleKey());
+    
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
             ]);
         }
-
-        RateLimiter::clear($this->throttleKey());
+    
+        RateLimiter::clear($this->throttleKey());    
     }
 
     /**
