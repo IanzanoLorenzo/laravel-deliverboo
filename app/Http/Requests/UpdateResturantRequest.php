@@ -26,7 +26,8 @@ class UpdateResturantRequest extends FormRequest
         return [
             'name' => ['required' , 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
-            'cover_image' => ['image']
+            'cover_image' => ['image'],
+            'type_name' => ['required', 'array', 'exists:types,id']
         ];
     }
 
@@ -40,7 +41,11 @@ class UpdateResturantRequest extends FormRequest
             'address.string' => 'Il campo indirizzo deve essere una stringa',
             'address.max' => 'Il campo indirizzo può avere al massimo :max caratteri',
         
-            'cover_image.image' => 'La copertina deve essere un file immagine'
+            'cover_image.image' => 'La copertina deve essere un file immagine',
+
+            'type_name.required' => 'Scegliere almeno una tipologia',
+            'type_name.array' => 'Il campo tipo dev\'essere un array',
+            'type_name.exists' => 'Il tipo scelto non esiste',
         ];
     }
 }
