@@ -39,7 +39,11 @@
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <a href="{{route('admin.dishes.edit', $dish)}}" class="btn btn-primary">Modifica il piatto</a>
+        </div>
     </div>
     
 </div>

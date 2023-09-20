@@ -71,7 +71,7 @@
                     <button type="submit" class="btn btn-primary m-3">
                         Modifica Ristorante
                     </button>  
-                    <a href="{{ route('admin.resturants') }}" class="btn btn-danger text-white">
+                    <a href="{{ url()->previous() }}" class="btn btn-danger text-white">
                         Annulla Modifica
                     </a>
                 </form>

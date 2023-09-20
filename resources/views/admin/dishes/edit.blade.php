@@ -62,7 +62,7 @@
                     
                     <button type="submit" class="btn btn-primary m-3">Modifica piatto</button>
                     {{-- PULSANTE ANNULLA MODIFICA --}}
-                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-danger text-white">Annulla modifica</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-danger text-white">Annulla modifica</a>
                 </form>
             </div>
         </div>
