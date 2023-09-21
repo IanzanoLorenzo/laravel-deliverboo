@@ -10,7 +10,7 @@
 
             <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
-                <ul class="list-unstyled text-center">
+                <ul class="list-unstyled text-center text-md-end ">
                     @forelse ($resturant->types as $type)
                     <li>
                         {{$type->name}}
@@ -53,7 +53,7 @@
         
         <div class="row mb-5 mt-5 position-relative">
             {{-- LEGENDA --}}
-            <div class="col-2 position_tr">
+            <div class="col-2 position_tr d-none d-md-block">
                 <div class="card text-center">
                     <div class="bg-primary text-white p-1">Legenda</div>
                     <div class="bg-white p-1">Visibile</div>
