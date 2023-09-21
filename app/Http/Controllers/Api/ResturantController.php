@@ -9,7 +9,7 @@ Use App\Models\Resturant;
 class ResturantController extends Controller
 {
     public function index(){
-        $resturants = Resturant::all();
+        $resturants = Resturant::with('types')->get();
         return response()->json(
             [
                 'success' => true,
