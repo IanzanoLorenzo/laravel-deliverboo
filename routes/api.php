@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ResturantController as ResturantController;
+use App\Http\Controllers\Api\DishController as DishController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('')->group(function (){
     Route::get('/resturants', [ResturantController::class, 'index']);
+    Route::get('/resturants/{slug}', [DishController::class, 'index']);
 });
 
