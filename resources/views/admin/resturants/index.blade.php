@@ -4,13 +4,13 @@
     <div class="container">
         {{-- UTENTE RISTORATORE --}}
         <h2 class="text-center text-white"> Benvenuto <span class="text-dark">{{ $user->name }}</span>!</h2>
-        {{-- NOME RISTORANTE --}}
+        {{-- NOME RISTORANTE --}}  
         <h4 class="text-center text-white mb-4">Gestisci qui il menù del tuo ristorante <em class="text-dark">{{ $resturant->name }}</em>.</h4>
         <div class="row justify-content-center">
 
             <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
-                <ul class="list-unstyled text-center">
+                <ul class="list-unstyled text-center text-md-end">
                     @forelse ($resturant->types as $type)
                     <li>
                         {{$type->name}}
@@ -20,7 +20,7 @@
                         Nessun tipo selezionato
                     </li>
                     @endforelse
-                </ul>
+                </ul>       
             </div>
 
             <div class="col-12 col-md-4 d-flex justify-content-center">
@@ -49,18 +49,14 @@
             </div>
             @endif
         </div>
-        {{-- <div class="d-flex col-3">
-            <div class="bg-white box me-1 mt-1"></div><span class="me-5">: Visibile</span>
-            <div class="bg-secondary box me-1 mt-1"></div><span>: Non Visibile</span>
-        </div> --}}
 
         <div class="row mb-5 mt-5">
-            <div class="col-12 col-md-8 offset-md-2 px-4">
+            <div class="col-12 col-md-8 offset-md-2">
                 @if(count($resturant->dishes) !== 0)
                     
                     <ul class="list-group list-group-flush">
                         {{-- MENU --}}
-                        <li class="list-group-item bg-primary text-white">
+                        <li class="list-group-item">
                             <h2 class="text-center">
                                 Men&uacute;
                             </h2>
@@ -77,11 +73,11 @@
                                     &euro;{{ $item->price}}
                                 </span>
                             </div>
-                            <p class="pe-3">
-                                {{ $item->ingredients}}
-                            </p>  
                             
                             {{-- INGREDIENTI --}}
+                            <p>
+                                {{ $item->ingredients}}
+                            </p>  
                         </li>
                         @endforeach
                     </ul>
