@@ -3,16 +3,20 @@
 @section('content')
     <div class="container">
         <div class="col-12">
+            {{-- TITOLONE --}}
             <h2 class="text-white text-center my-4">
                 Crea il tuo nuovo Piatto
             </h2>
         </div>
         <div class="col-12">
-            <div class="text-center">
+            {{-- PULSANTE TORNA ALLA DASHBOARD --}}
+            <div class="text-end">
                 <a href="{{ route('dashboard') }}" class="btn button_delive_two m-3">Torna alla dashboard</a>
             </div>
-            <div class="card">
-                <p class="text-center text-secondary">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
+            <div class="card mb-5">
+                {{-- Campi obbbligatori * --}}
+                <p class="text-center text-secondary mt-3">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
+                {{-- INIZIO FORM --}}
                 <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group p-3">
@@ -54,9 +58,12 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror 
                     </div>
-                    <button type="submit" class="btn btn-primary m-3">Crea piatto</button>  
+                    {{-- PULSANTE CREA PIATTO --}}
+                    <button type="submit" class="btn btn-warning m-3">Crea piatto</button>  
+                    {{-- PULSANTE TORNA AI PIATTI --}}
                     <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Torna alla lista piatti</a>
                 </form>
+                {{-- FINE FORM --}}
             </div>
         </div>
     </div>

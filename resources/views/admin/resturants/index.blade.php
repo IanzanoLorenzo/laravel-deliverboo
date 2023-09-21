@@ -3,20 +3,29 @@
 @section('content')
     <div class="container">
         {{-- UTENTE RISTORATORE --}}
-        <h2 class="text-center text-white"> Benvenuto <span class="text-dark">{{ $user->name }}</span>!</h2>
-        {{-- NOME RISTORANTE --}}  
-        <h4 class="text-center text-white mb-4">Gestisci qui il menù del tuo ristorante <em class="text-dark">{{ $resturant->name }}</em>.</h4>
-        <div class="row justify-content-center">
+        <h2 class="text-center text-white">
+            Benvenuto 
+            <strong class="text-dark">{{ $user->name }}</strong>
+            !
+        </h2>
+        {{-- NOME RISTORANTE --}}
+        <h4 class="text-center text-white mb-4">
+            Gestisci qui il menù del tuo ristorante
+            <em class="text-dark display-6">{{ $resturant->name }}</em>
+            .
+        </h4>
 
+        <div class="row justify-content-center">
             <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
                 <ul class="list-unstyled text-center text-md-end">
                     @forelse ($resturant->types as $type)
                     <li>
-                        {{$type->name}}
+                        <span>{{$type->name}}</span> 
+                        <i class="fs-3 ms-1 fa {{$type->icon}}"></i> 
                     </li>
                     @empty
-                    <li>
+                    <li class="bg-white p-1 text-danger">
                         Nessun tipo selezionato
                     </li>
                     @endforelse
@@ -29,7 +38,7 @@
             </div>
             <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
 
-                <div class="d-flex">
+                <div class="d-flex mt-4 mt-md-0">
                     {{-- PULSANTE EDIT PIATTI  --}}
                     <a href="{{ route('admin.dishes.index')}}" class="button_delive_two btn btn-sm me-3" type="button">
                         Modifica Men&uacute;
@@ -52,13 +61,15 @@
 
         
         <div class="row mb-5 mt-5 position-relative">
-            <div class="col-2 position_tr">
+            {{-- LEGENDA --}}
+            <div class="col-2 position_tr d-none d-md-block">
                 <div class="card text-center">
                     <div class="bg-primary text-white p-1">Legenda</div>
                     <div class="bg-white p-1">Visibile</div>
                     <div class="back-nv p-1">Non Visibile</div>
                 </div>
             </div>
+            {{-- LEGENDA --}}
             <div class="col-12 col-md-8 offset-md-2 px-4">
         <div class="row mb-5 mt-5">
             <div class="col-12 col-md-8 offset-md-2">
