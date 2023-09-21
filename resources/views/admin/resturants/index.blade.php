@@ -3,21 +3,29 @@
 @section('content')
     <div class="container">
         {{-- UTENTE RISTORATORE --}}
-        <h2 class="text-center text-white"> Benvenuto <span class="text-dark">{{ $user->name }}</span>!</h2>
+        <h2 class="text-center text-white">
+            Benvenuto 
+            <strong class="text-dark">{{ $user->name }}</strong>
+            !
+        </h2>
         {{-- NOME RISTORANTE --}}
-        <h4 class="text-center text-white mb-4">Gestisci qui il menù del tuo ristorante <em class="text-dark">{{ $resturant->name }}</em>.</h4>
-        <div class="row justify-content-center">
+        <h4 class="text-center text-white mb-4">
+            Gestisci qui il menù del tuo ristorante
+            <em class="text-dark display-6">{{ $resturant->name }}</em>
+            .
+        </h4>
 
+        <div class="row justify-content-center">
             <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
-                <ul class="list-unstyled text-center text-md-end ">
+                <ul class=" list-unstyled text-center text-md-end">
                     @forelse ($resturant->types as $type)
                     <li>
-                        {{$type->name}}
+                        <span>{{$type->name}}</span> 
                         <i class="fs-3 ms-1 fa {{$type->icon}}"></i> 
                     </li>
                     @empty
-                    <li>
+                    <li class="bg-white p-1 text-danger">
                         Nessun tipo selezionato
                     </li>
                     @endforelse
