@@ -49,6 +49,10 @@
             </div>
             @endif
         </div>
+        {{-- <div class="d-flex col-3">
+            <div class="bg-white box me-1 mt-1"></div><span class="me-5">: Visibile</span>
+            <div class="bg-secondary box me-1 mt-1"></div><span>: Non Visibile</span>
+        </div> --}}
 
         <div class="row mb-5 mt-5">
             <div class="col-12 col-md-8 offset-md-2 px-4">
@@ -56,7 +60,7 @@
                     
                     <ul class="list-group list-group-flush">
                         {{-- MENU --}}
-                        <li class="list-group-item">
+                        <li class="list-group-item bg-primary text-white">
                             <h2 class="text-center">
                                 Men&uacute;
                             </h2>
@@ -73,11 +77,11 @@
                                     &euro;{{ $item->price}}
                                 </span>
                             </div>
-                            
-                            {{-- INGREDIENTI --}}
-                            <p>
+                            <p class="pe-3">
                                 {{ $item->ingredients}}
                             </p>  
+                            
+                            {{-- INGREDIENTI --}}
                         </li>
                         @endforeach
                     </ul>

@@ -2,86 +2,106 @@
 $dark: rgb(20, 20, 20);
 $danger: #ff0000;
 $primary: #ac0a55;
-$warning:  #ff8800;
+$warning: #ff8800;
 //FINE COLLOR PALETTE
 @import '~bootstrap/scss/bootstrap';
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;1,300;1,600;1,800&display=swap');
 
-body{
-    background: linear-gradient(20deg , $danger  60%, $warning 60%);
+body {
+    background: linear-gradient(20deg, $danger 60%, $warning 60%);
     font-family: 'Montserrat', sans-serif;
     background-repeat: no-repeat;
     min-height: 100vh;
 }
 
 //STYLE UTILITIES
-.button_delive{
+.button_delive {
     background-color: white;
 }
-.button_delive:hover{
+
+.button_delive:hover {
     background: none;
-    border:1px solid white;
-    color:white;
+    border: 1px solid white;
+    color: white;
 }
 
-.button_delive_two{
+.button_delive_two {
     background-color: $primary;
     color: white;
 }
-.button_delive_two:hover{
+
+.button_delive_two:hover {
     background: none;
-    border:1px solid white;
-    color:white;
+    border: 1px solid white;
+    color: white;
 }
+
 //FINE STYLE
 
 //*****NAVBAR*****/
-.nav_item_hover:hover{
+.nav_item_hover:hover {
     font-weight: 900;
     border-bottom: 1px solid rgba(255, 255, 255, 0.575);
-    border-width:thin;
+    border-width: thin;
 }
 
-.nav_auth_hover:hover{
+.nav_auth_hover:hover {
     color: $primary !important;
     border-top: 1px solid rgba(177, 18, 79, 0.733);
-    border-width:thin;
+    border-width: thin;
 }
 
-.nav_itemdrop_hover:hover{
+.nav_itemdrop_hover:hover {
     background-color: $primary !important;
     color: white;
 }
 
-.nav_drop_menu{
-    background-color: rgba(255, 255, 255, 0.301) !important;
+.nav_drop_menu {
+    background-color: rgba(245, 222, 179, 0.5);
 }
+
 //*****FINE NAVBAR*****/
 
 //******HOME PAGE******/
-.hamburger_menu{
+.hamburger_menu {
     padding: 3px !important;
-    box-shadow:none!important;
-} 
-.hamburger_menu:hover{
-    background-color: white !important;
+    box-shadow: none !important;
 }
 
-.shadow_title{
-    text-shadow: 3px 3px white ;
+.hamburger_menu:hover {
+    background-color: rgba(255, 255, 255, 0.479) !important;
 }
-.hr_style{
+
+.shadow_title {
+    text-shadow: 3px 3px white;
+}
+
+.hr_style {
     border: 1px solid white;
     opacity: 0.40;
 }
+
 //******FINE HOME PAGE******/
 
 //PAGINA RISTORANTE//
-.img_resturant{
+.img_resturant {
     width: 150px;
     aspect-ratio: 1/1;
     object-fit: cover;
 }
 
+// .box {
+//     width: 15px;
+//     height: 15px;
+// }
+
 //FINE PAGINA RISTORANTE//
+
+
+//MEDIA QUERY//
+@media screen and (min-width: 768px) {
+    .nav_drop_menu {
+        background-color: rgb(255, 242, 220)
+    }
+}
