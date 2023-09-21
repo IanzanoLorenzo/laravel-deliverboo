@@ -13,7 +13,17 @@ class ResturantController extends Controller
         return response()->json(
             [
                 'success' => true,
-                'results' => $resturants
+                'response' => $resturants
+            ]
+            );
+    }
+
+    public function search(String $string){
+        $resturants = Resturant::where('name', 'LIKE', '%'.$string.'%')->get();
+        return response()->json(
+            [
+                'success' => true,
+                'response' => $resturants
             ]
             );
     }
