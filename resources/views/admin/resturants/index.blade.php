@@ -14,6 +14,7 @@
                     @forelse ($resturant->types as $type)
                     <li>
                         {{$type->name}}
+                        <i class="fa {{$type->icon}}"></i> 
                     </li>
                     @empty
                     <li>
