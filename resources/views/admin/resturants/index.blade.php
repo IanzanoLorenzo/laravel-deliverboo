@@ -29,7 +29,7 @@
             </div>
             <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
 
-                <div class="d-flex">
+                <div class="d-flex mt-4 mt-md-0">
                     {{-- PULSANTE EDIT PIATTI  --}}
                     <a href="{{ route('admin.dishes.index')}}" class="button_delive_two btn btn-sm me-3" type="button">
                         Modifica Men&uacute;
