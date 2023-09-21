@@ -21,6 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('')->group(function (){
     Route::get('/resturants', [ResturantController::class, 'index']);
-    Route::get('/resturants/{string}', [ResturantController::class, 'search']);
 });
 

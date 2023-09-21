@@ -17,14 +17,4 @@ class ResturantController extends Controller
             ]
             );
     }
-
-    public function search(String $string){
-        $resturants = Resturant::where('name', 'LIKE', '%'.$string.'%')->get();
-        return response()->json(
-            [
-                'success' => true,
-                'response' => $resturants
-            ]
-            );
-    }
 }
