@@ -91,10 +91,19 @@ body {
     object-fit: cover;
 }
 
-// .box {
-//     width: 15px;
-//     height: 15px;
-// }
+.box {
+    width: 15px;
+    height: 15px;
+}
+
+.position_tr {
+    position: absolute;
+    right: 0;
+}
+
+.back-nv {
+    background-color: #e2e3e5;
+}
 
 //FINE PAGINA RISTORANTE//
 
