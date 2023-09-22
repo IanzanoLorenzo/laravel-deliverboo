@@ -4,15 +4,14 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mb-5">
                 {{-- Registrazione --}}
                 <div class="card-header">{{ __('Registrazione') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
-                        {{--DATI UTENTE --}}
-                        <h2 class="text-center title_form">Inserisci i tuoi dati</h2>
-                        <p class="text-center text-secondary">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
+                        <h2 class="text-center text-primary title_form">Inserisci i tuoi dati</h2>
+                        <p class="text-center text-secondary p-2 mt-4">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
                         {{-- INIZIO INPUT-FORM --}}
                         <div class="mb-4 row">
                             {{-- Nome --}}
@@ -62,6 +61,7 @@
                                 @enderror
                             </div>
                         </div>
+                        {{-- Conferma password --}}
                         <div class="mb-4 row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }} *</label>
                             <div class="col-md-6">

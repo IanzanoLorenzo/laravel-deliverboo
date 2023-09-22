@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Accedi') }}</div>
-                <p class="text-center text-secondary">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
+                <p class="text-center text-secondary p-2 mt-4">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

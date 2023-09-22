@@ -29,18 +29,23 @@
         </div>
     </div>
 
-    <div class="row">
-        {{-- PULSANTE RISTORANTE --}}
-        <div class="col-12 col-md-auto mt-4">
-            <a href="{{ route('admin.resturants' )}}" class="btn button_delive_two">
-                Visualizza il tuo Men&uacute;
-            </a>
+    <div class="row ">
+        <div class="col-12 col-md-6 mt-4 ">
+            <div class="d-flex justify-content-center justify-content-md-end">
+                {{-- PULSANTE RISTORANTE --}}
+                <a href="{{ route('admin.resturants' )}}" class="btn button_delive_three">
+                    Vai al tuo Ristorante <br> con il Men&uacute;
+                </a>
+            </div>
         </div>
-        {{-- PULSANTE EDIT PIATTI --}}
+        
         <div class="col-12 col-md-6 mt-4">
-            <a href="{{ route('admin.dishes.index' )}}" class="btn button_delive_two">
-                Visualizza i tuoi Piatti
-            </a>
+            <div class="h-100 d-flex justify-content-center justify-content-md-start">
+                {{-- PULSANTE EDIT PIATTI --}}
+                <a href="{{ route('admin.dishes.index' )}}" class="btn button_delive_two d-flex align-items-center">
+                    Vai ai tuoi Piatti
+                </a>
+            </div>
         </div>
     </div>
 </div>

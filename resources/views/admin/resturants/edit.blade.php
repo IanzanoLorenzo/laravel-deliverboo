@@ -3,21 +3,26 @@
 @section('content')
 
     <div class="container">
+        <h2 class="text-white text-center my-4">
+            Modifica il tuo Ristorante
+        </h2>
         <div class="col-12">
-            <h2 class="text-white text-center my-4">
-                Modifica il tuo Ristorante
-            </h2>
-        </div>
-        <div class="col-12">
-            <div class="text-center">
-                <a href="{{ route('dashboard') }}" class="btn button_delive_two m-3">Torna alla dashboard</a>
+            {{-- PULSANTE TORNA ALLA DASHBOARD --}}
+            <div class="text-end">
+                <a href="{{ route('dashboard') }}" class="btn button_delive_two m-3">
+                    Torna alla dashboard
+                    <i class="fas fa-arrow-right-from-bracket"></i>
+                </a>
             </div>
-            <div class="card">
+            {{-- CARD --}}
+            <div class="card mb-5">
                 <p class="text-center text-secondary">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
+                {{-- FORM --}}
                 <form action="{{route('admin.resturants.update', $resturant)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group p-3">
+                        {{-- Nome Ristorante --}}
                         <label class="control-label">Nome Ristorante *</label>
                         <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Inserisci il nome del piatto" value="{{ old('name') ?? $resturant->name }}" required>
                         @error('name')
@@ -25,6 +30,7 @@
                         @enderror
                     </div>
                     <div class="form-group p-3">
+                        {{-- Via del Ristorante --}}
                         <label class="control-label">Indirizzo *</label>
                         <input type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" placeholder="Inserisci gli ingredienti" value="{{ old('address') ?? $resturant->address }}" required>
                         @error('address')
@@ -39,18 +45,17 @@
                             <div class="input-group">
                                 {{-- CHECKBOX --}}
                                 @foreach ($types as $type)
-                                
-                                <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" @if ($errors->any())
-                                {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}
-                                @else
-                                {{ $resturant->types->contains($type->id) ? 'checked' : '' }}
-                                @endif>
-                                <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
+                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" @if ($errors->any())
+                                    {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}
+                                    @else
+                                        {{ $resturant->types->contains($type->id) ? 'checked' : '' }}
+                                    @endif>
+                                    <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
                                 @endforeach
                                 @error('type_name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
                             </div>
                         </div>
@@ -69,10 +74,11 @@
                         <div>Nessuna immagine presente.</div>
                         @endif
                     </div>
-                    {{-- PULSANTI --}}
-                    <button type="submit" class="btn btn-primary m-3">
+                    {{-- PULSANTE MODIFICA RISTO --}}
+                    <button type="submit" class="btn btn-warning m-3">
                         Modifica Ristorante
-                    </button>  
+                    </button> 
+                    {{-- PULSANTE ANNULLA --}} 
                     <a href="{{ url()->previous() }}" class="btn btn-danger text-white">
                         Annulla Modifica
                     </a>

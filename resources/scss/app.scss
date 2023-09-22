@@ -1,5 +1,5 @@
 //COLOR PALETTE
-$dark: rgb(20, 20, 20);
+$dark: rgb(44, 44, 44);
 $danger: #ff0000;
 $primary: #ac0a55;
 $warning: #ff8800;
@@ -14,29 +14,23 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
 }
-
 //STYLE UTILITIES
 .button_delive {
     background-color: white;
 }
-
-.button_delive:hover {
-    background: none;
-    border: 1px solid white;
-    color: white;
-}
-
 .button_delive_two {
     background-color: $primary;
     color: white;
 }
-
-.button_delive_two:hover {
+.button_delive_three {
+    background-color: $dark;
+    color: white;
+}
+.button_delive:hover, .button_delive_two:hover, .button_delive_three:hover{
     background: none;
     border: 1px solid white;
     color: white;
 }
-
 //FINE STYLE
 
 //*****NAVBAR*****/
