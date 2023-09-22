@@ -15,20 +15,7 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        $types = [
-            [
-                'name' => 'Italiano',
-                'icon' => 'fa-pizza-slice'
-            ],
-            [
-                'name' => 'Giapponese',
-                'icon' => 'fa-bowl-rice'
-            ],
-            [
-                'name' => 'Messicano',
-                'icon' => 'fa-pepper-hot'
-            ],
-        ];
+        $types = config('types');
 
         foreach($types as $item){
             $type = new Type();
