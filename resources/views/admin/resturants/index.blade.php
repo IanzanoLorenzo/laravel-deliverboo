@@ -41,7 +41,7 @@
                 <div class="d-flex mt-4 mt-md-0">
                     {{-- PULSANTE EDIT PIATTI  --}}
                     <a href="{{ route('admin.dishes.index')}}" class="button_delive_two btn btn-sm me-3" type="button">
-                        Modifica Men&uacute;
+                        Modifica Piatti
                         <i class="fa-solid fa-arrow-turn-up ms-1" style="color: #ffffff;"></i>
                     </a>
                     {{-- PULSANTE EDIT RISTORANTE --}}
