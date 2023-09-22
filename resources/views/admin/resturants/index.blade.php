@@ -16,9 +16,9 @@
         </h4>
         <hr class="text-white hr_style mb-4">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
+            <div class="col-12 offset-md-1 col-md-3 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
-                <ul class="list-unstyled text-center text-md-end text-uppercase text-white fs-5">
+                <ul class="list-unstyled text-center text-md-start text-uppercase text-white fs-5">
                     @forelse ($resturant->types as $type)
                     <li>
                         <i class="fs-3 me-1 fa {{$type->icon}}"></i> 
