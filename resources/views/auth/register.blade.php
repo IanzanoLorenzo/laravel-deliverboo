@@ -54,7 +54,7 @@
                             {{-- Password --}}
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }} *</label>
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="min. 8 caratteri" minlength="8" autocomplete="new-password" required>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  placeholder="min. 8 caratteri" minlength="8"  autocomplete="new-password" required>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -65,7 +65,10 @@
                         <div class="mb-4 row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }} *</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" minlength="8" required>
+                                <span id="password-confirm-error" class="invalid-feedback" role="alert" style="display: none;">
+                                    La password e la conferma password non corrispondono.
+                                </span>
                             </div>
                         </div>
                         <div class="mb-4 row">
@@ -142,6 +145,11 @@
                                     @endforeach
                                 </div>
                                 <span id="checkboxError" class="invalid-feedback" style="display: none;">Selezionare almeno una tipologia.</span>
+                                @error('cover_image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
                         {{-- PULSANTE REGISTRATI --}}
