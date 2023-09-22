@@ -8,14 +8,22 @@
         @guest
         {{-- BENVENUTO QUEST --}}
         <h1 class="text-light display-5 fw-bold text-center mt-4">
-            Ben arrivato nel tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
+            Inizia ad utilizzare il tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
         </h1>
         @endguest
         {{-- NOME UTENTE REGISTRATO --}}
         @auth
-        <h1 class="text-light display-5 fw-bold text-center mt-4">
-            Ben tornato nel tuo gestionale <span class="text-dark">{{Auth::user()->name}}</span>
-        </h1>
+        <div class="container">
+            <h1 class="text-light display-5 fw-bold text-center mt-4"class="text-light display-5 fw-bold text-center mt-4">
+            Salve <span class="text-dark">{{Auth::user()->name}}</span>!
+            </h1>
+
+            <h3 class="text-light text-center mt-4">
+            Siamo lieti di averti con noi! Grazie per aver scelto il nostro servizio per gestire 
+            il tuo ristorante e raggiungere i tuoi clienti.
+            </h3>
+        </div>
+        
         @endauth
 
         <div class="container py-3">
@@ -37,10 +45,6 @@
                     {{-- PARAGRAFO REGISTRATO--}}
                     @auth
                     <p class="text-white fs-5">
-                        Siamo lieti di averti con noi! Grazie per aver scelto il nostro servizio per gestire 
-                        il tuo ristorante e raggiungere i tuoi clienti.
-                        <br>
-                        <br>
                         In questa pagina troverai tutte le informazioni e le funzionalità necessarie 
                         per gestire il tuo business in modo efficace. 
                         Potrai creare il tuo menù, gestire gli ordini, monitorare le vendite e molto altro ancora.
