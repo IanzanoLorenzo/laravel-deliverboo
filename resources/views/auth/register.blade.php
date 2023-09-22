@@ -65,14 +65,10 @@
                         <div class="mb-4 row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }} *</label>
                             <div class="col-md-6">
-<<<<<<< HEAD
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" minlength="8" required>
                                 <span id="password-confirm-error" class="invalid-feedback" role="alert" style="display: none;">
                                     La password e la conferma password non corrispondono.
                                 </span>
-=======
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password"  minlength="8"  required>
->>>>>>> 32238d73765f98ec6b46d1d97c9c5c26476f99be
                             </div>
                         </div>
                         <div class="mb-4 row">
