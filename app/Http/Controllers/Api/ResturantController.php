@@ -23,4 +23,35 @@ class ResturantController extends Controller
             ]
             );
     }
+
+    public function search(String $search){
+        $types = Type::all();
+
+        $selectedTypesString = explode('-', $search);
+
+        $selectedTypes = [];
+
+        foreach($selectedTypesString as $typeString){
+            $selectedTypes[] = intval($typeString);
+        }
+
+        $resturantsUnfiltered = Resturant::whereHas('types', function ($query) use ($selectedTypes) {
+            $query->whereIn('type_id', $selectedTypes);
+        })->with('types')->get();
+    
+        $resturants = $resturantsUnfiltered->filter(function ($resturant) use ($selectedTypes) {
+            return count(array_intersect($resturant->types->pluck('id')->toArray(), $selectedTypes)) === count($selectedTypes);
+        });
+    
+
+        return response()->json(
+            [
+                'success' => true,
+                'response' => [
+                    'resturants' => $resturants,
+                    'types' => $types
+                ]
+            ]
+            );
+    }
 }

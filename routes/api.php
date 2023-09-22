@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('')->group(function (){
     Route::get('/resturants', [ResturantController::class, 'index']);
+    Route::get('/resturants/search/{search}', [ResturantController::class, 'search']);
     Route::get('/resturants/{slug}', [DishController::class, 'index']);
 });
 
