@@ -7,7 +7,7 @@ $restaurants = [
         'slug' => 'piero-e-anna-ristorante',
         'address' => 'Via Roma, 18',
         'cover_image' => 'cover_images/ristorante_italiano.jpg',
-        'types' => [1, 3]
+        'types' => [1]
     ],
     [
         'user_id' => 2,
@@ -15,7 +15,7 @@ $restaurants = [
         'slug' => 'ristorante-giapponese-di-bruce',
         'address' => 'Via Amerigo Vespucci, 17',
         'cover_image' => 'cover_images/ristorante_giapponese.jpg',
-        'types' => [1, 2, 3]
+        'types' => [1, 2]
     ],
     [
         'user_id' => 3,
@@ -23,7 +23,7 @@ $restaurants = [
         'slug' => 'casa-mezcal-ristorante',
         'address' => 'Via Tommaso, 20',
         'cover_image' => 'cover_images/ristorante_messicano.jpg',
-        'types' => [3]
+        'types' => [3, 5]
     ],
     [
         'user_id' => 4,
@@ -31,7 +31,7 @@ $restaurants = [
         'slug' => 'ristorante-greco-di-maria',
         'address' => 'Via Grecia, 12',
         'cover_image' => 'cover_images/ristorante_greco.jpg',
-        'types' => [1]
+        'types' => [7, 6]
     ],
     [
         'user_id' => 5,
@@ -39,7 +39,7 @@ $restaurants = [
         'slug' => 'sapori-d-india-ristorante',
         'address' => 'Via Delhi, 5',
         'cover_image' => 'cover_images/ristorante_indiano.jpg',
-        'types' => [1, 4]
+        'types' => [5, 8]
     ],
     [
         'user_id' => 6,
@@ -47,39 +47,39 @@ $restaurants = [
         'slug' => 'le-bistro-ristorante',
         'address' => 'Rue de Paris, 9',
         'cover_image' => 'cover_images/ristorante_francese.jpg',
-        'types' => [5]
+        'types' => [1, 6]
     ],
     [
         'user_id' => 7,
         'name' => 'Trattoria Maria',
         'slug' => 'trattoria-maria',
         'address' => 'Via Napoli, 27',
-        'cover_image' => 'cover_images/ristorante_italiano.jpg',
-        'types' => [1, 3]
+        'cover_image' => 'cover_images/ristorante_italiano_2.jpg',
+        'types' => [1, 4, 10]
     ],
     [
         'user_id' => 8,
         'name' => 'Sushi Express',
         'slug' => 'sushi-express',
         'address' => 'Tokyo Street, 8',
-        'cover_image' => 'cover_images/ristorante_giapponese.jpg',
-        'types' => [2, 3]
+        'cover_image' => 'cover_images/ristorante_giapponese_2.jpg',
+        'types' => [4, 2 ,9]
     ],
     [
         'user_id' => 9,
         'name' => 'Taqueria Mexico',
         'slug' => 'taqueria-mexico',
         'address' => 'Avenida de los Tacos, 15',
-        'cover_image' => 'cover_images/ristorante_messicano.jpg',
-        'types' => [3]
+        'cover_image' => 'cover_images/ristorante_messicano_2.jpg',
+        'types' => [10, 1, 3]
     ],
     [
         'user_id' => 10,
         'name' => 'Greek Delights',
         'slug' => 'greek-delights',
         'address' => 'Athens Square, 14',
-        'cover_image' => 'cover_images/ristorante_greco.jpg',
-        'types' => [1, 3]
+        'cover_image' => 'cover_images/ristorante_greco_2.jpg',
+        'types' => [7]
     ],
 ];
 
