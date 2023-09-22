@@ -58,8 +58,6 @@
             </div>
             @endif
         </div>
-
-        
         <div class="row mb-5 mt-5 position-relative">
             {{-- LEGENDA TABLET--}}
             <div class="col-2 position_tr d-none d-md-block">
@@ -70,8 +68,9 @@
                 </div>
             </div>
             {{-- FINE LEGENDA --}}
-            <div class="col-12 col-md-8 offset-md-2 px-4">
+        </div>
         <div class="row mb-5 mt-5">
+
             <div class="col-12 col-md-8 offset-md-2">
                 @if(count($resturant->dishes) !== 0)
                     
@@ -88,6 +87,7 @@
                                 <div class="bg-white p-1">Visibile</div>
                                 <div class="back-nv p-1">Non Visibile</div>
                             </div>
+                            {{-- FINE LEGENDA --}}
                         </li>
                         @foreach ($resturant->dishes as $item)
                         <li class="list-group-item @if(!$item->visibility) list-group-item-secondary @endif">
@@ -115,5 +115,5 @@
         </div>
         
         {{-- FINE PIATTI --}}
-    </div>
+    </>
 @endsection
