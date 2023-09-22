@@ -48,3 +48,31 @@ dishDeleteButton.forEach((button) => {
     })
 })
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var form = document.querySelector('form');
+    var errorSpan = document.getElementById('checkboxError');
+
+    form.addEventListener("submit", function (event) {
+        var checked = false;
+
+        checkboxes.forEach(function (checkbox) {
+            if (checkbox.checked) {
+                checked = true;
+            }
+        });
+
+        if (!checked) {
+            errorSpan.style.display = "block"; // Mostra il messaggio di errore.
+            event.preventDefault(); // Impedisci l'invio del modulo se nessuna casella di controllo è selezionata.
+        } else {
+            errorSpan.style.display = "none"; // Nascondi il messaggio di errore se almeno una casella di controllo è selezionata.
+        }
+    });
+});
+
+
+
+
+

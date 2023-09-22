@@ -137,15 +137,11 @@
                                 <div class="input-group">
                                     {{-- CHECKBOX --}}
                                     @foreach ($types as $type)
-                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}>
+                                    <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3" name="type_name[]" value="{{ $type->id }}" {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}>
                                     <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
                                     @endforeach
-                                    @error('type_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
                                 </div>
+                                <span id="checkboxError" class="invalid-feedback" style="display: none;">Selezionare almeno una tipologia.</span>
                             </div>
                         </div>
                         {{-- PULSANTE REGISTRATI --}}
