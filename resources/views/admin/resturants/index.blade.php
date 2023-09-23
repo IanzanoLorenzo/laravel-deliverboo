@@ -115,5 +115,5 @@
         </div>
         
         {{-- FINE PIATTI --}}
-    </>
+    </div>
 @endsection
