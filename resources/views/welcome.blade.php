@@ -32,7 +32,7 @@
                 <div class="col-12 col-md-6 d-flex align-items-center">
                     {{-- PARAGRAFO GUEST --}}
                     @guest
-                    <p class="text-white fs-5">
+                    <p class="text-white fs-5 lh-lg">
                         Se hai mai desiderato semplificare la gestione del tuo ristorante o servizio di 
                         consegna di <span class="text-dark fw-bold">cibo a domicilio</span>, sei nel posto giusto.
                         <br> 
@@ -44,7 +44,7 @@
                     @endguest
                     {{-- PARAGRAFO REGISTRATO--}}
                     @auth
-                    <p class="text-white fs-5">
+                    <p class="text-white fs-5 lh-lg">
                         In questa pagina troverai tutte le informazioni e le funzionalità necessarie 
                         per gestire il tuo business in modo efficace. 
                         Potrai creare il tuo menù, gestire gli ordini, monitorare le vendite e molto altro ancora.
