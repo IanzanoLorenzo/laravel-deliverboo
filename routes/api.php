@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ResturantController as ResturantController;
 use App\Http\Controllers\Api\DishController as DishController;
+use App\Http\Controllers\Api\OrderController as OrderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +26,10 @@ Route::prefix('')->group(function (){
     Route::get('/resturants', [ResturantController::class, 'index']);
     Route::get('/resturants/search/{search}', [ResturantController::class, 'search']);
     Route::get('/resturants/{slug}', [DishController::class, 'index']);
+});
+
+Route::prefix('payments')->group(function(){
+    Route::get('/token', [OrderController::class, 'getToken']);
+    Route::post('/process', [OrderController::class, 'processPayment']);
 });
 
