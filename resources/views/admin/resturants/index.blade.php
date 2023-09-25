@@ -15,7 +15,7 @@
             .
         </h4>
         <hr class="text-white hr_style mb-4">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-12 offset-md-1 col-md-3 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
                 <ul class="list-unstyled text-center text-md-start text-uppercase text-white fs-5">
@@ -98,7 +98,7 @@
                                 </h4>
                                 <span class="fs-6 text-dark">
                                 {{-- PREZZO --}}
-                                    {{ number_format($item->price, 2, ',','.') }}&euro;
+                                    &euro;{{ $item->price}}
                                 </span>
                             </div>
                             
