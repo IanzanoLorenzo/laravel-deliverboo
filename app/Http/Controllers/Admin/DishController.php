@@ -68,7 +68,7 @@ class DishController extends Controller
         $resturant= Resturant::where('user_id', Auth::id())->get()->first();
         if ($dish->resturant_id != $resturant->id){
             // L'utente non è il proprietario del piatto, quindi non ha autorizzazione
-            return redirect()->route('dashboard')->with('error', 'Non hai l\'autorizzazione per modificare questo piatto.');
+            return redirect()->route('dashboard')->with('error', 'Non hai l\'autorizzazione per visualizzare questo piatto.');
         }
 
         return view('admin.dishes.show', compact('dish'));
