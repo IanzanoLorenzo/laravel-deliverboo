@@ -137,13 +137,13 @@
                             <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }} *</label>
                             
                             <div class="col-md-6">
+                                @foreach ($types as $type)
                                 <div class="input-group">
                                     {{-- CHECKBOX --}}
-                                    @foreach ($types as $type)
                                     <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3" name="type_name[]" value="{{ $type->id }}" {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}>
                                     <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
-                                    @endforeach
                                 </div>
+                                @endforeach
                                 <span id="checkboxError" class="invalid-feedback" style="display: none;">Selezionare almeno una tipologia.</span>
                                 @error('cover_image')
                                 <span class="invalid-feedback" role="alert">
