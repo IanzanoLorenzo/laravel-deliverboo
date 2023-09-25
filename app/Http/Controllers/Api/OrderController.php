@@ -39,7 +39,6 @@ class OrderController extends Controller
     
     public function processPayment(Request $request){
         $formData = $request->all();
-        dd($formData);
         $orderData = $formData['order'];
         $dishesData = $formData['cart'];
 
