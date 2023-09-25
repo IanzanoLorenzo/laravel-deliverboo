@@ -10,7 +10,7 @@ use App\Models\Resturant;
 class DishController extends Controller
 {
     public function index(String $slug){
-        $resturant = Resturant::where('slug', $slug)->get()->first();
+        $resturant = Resturant::where('slug', $slug)->with('types')->get()->first();
         $dishes = Dish::where('resturant_id', $resturant->id)->where('visibility', true)->get();
         return response()->json(
             [
