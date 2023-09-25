@@ -16,7 +16,7 @@
             </div>
             {{-- CARD --}}
             <div class="card mb-5">
-                <p class="text-center text-secondary">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
+                <p class="text-center text-secondary pt-4">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
                 {{-- FORM --}}
                 <form action="{{route('admin.resturants.update', $resturant)}}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -41,7 +41,7 @@
                     {{-- Tipologia --}}
                     <div class="form-group p-3">
                         <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }} *</label>
-                        <div class="col-md-6">
+                        <div class="col-12">
                             <div class="input-group">
                                 {{-- CHECKBOX --}}
                                 @foreach ($types as $type)
