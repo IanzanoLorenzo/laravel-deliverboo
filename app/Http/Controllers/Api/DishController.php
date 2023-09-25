@@ -17,7 +17,7 @@ class DishController extends Controller
                 'success' => true,
                 'response' => [
                     'dishes' => $dishes,
-                    'resturant' => $resturant->id
+                    'resturant' => $resturant
                 ]
             ]
             );
