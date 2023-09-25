@@ -98,7 +98,7 @@
                                 </h4>
                                 <span class="fs-6 text-dark">
                                 {{-- PREZZO --}}
-                                    &euro;{{ $item->price}}
+                                    {{ number_format($item->price, 2, ',','.') }}&euro;
                                 </span>
                             </div>
                             

@@ -42,7 +42,7 @@
                         @foreach ($resturant->dishes as $dish)
                         <tr>
                             <td>{{$dish->name}}</td>
-                            <td class="d-none d-md-table-cell">{{$dish->price}}&euro;</td>
+                            <td class="d-none d-md-table-cell">{{ number_format($dish->price, 2, ',','.') }}&euro;</td>
                             <td class="d-none d-md-table-cell">{{ $dish->visibility ? 'Sì' : 'No' }}</td>
                             <td class="text-center">
                                 {{-- SHOW --}}
