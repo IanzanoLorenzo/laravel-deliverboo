@@ -9,6 +9,7 @@ use App\Models\orderDishRelation;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use Braintree\Gateway;
+use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
 {
@@ -38,7 +39,36 @@ class OrderController extends Controller
     }
     
     public function processPayment(Request $request){
+        
+        $messages = [
+            'address.required' => 'Il campo indirizzo è obbligatorio.',
+            'costumer_email.required' => 'Il campo email del cliente è obbligatorio.',
+            'costumer_name.required' => 'Il campo nome del cliente è obbligatorio.',
+            'costumer_surname.required' => 'Il campo cognome del cliente è obbligatorio.',
+            'delivery_tyme.required' => 'Il campo orario di consegna è obbligatorio.',
+        ];
+        
+        $validator = Validator::make($request->input('order'), [
+            'address'=> ['required'],
+            'costumer_email'=> ['required'],
+            'costumer_name'=> ['required'],
+            'costumer_surname'=> ['required'],
+            'delivery_tyme'=> ['required']
+        ], $messages);
+
+        if($validator->fails()){
+            return response()->json(
+                [
+                    'success' => false,
+                    'errors' => $validator->errors()
+                ]
+                );
+        };
+
         $formData = $request->all();
+
+
+
         $orderData = $formData['order'];
         $dishesData = $formData['cart'];
 
