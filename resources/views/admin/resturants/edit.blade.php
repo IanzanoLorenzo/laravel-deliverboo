@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+@vite(['resources/js/edit_resturant.js'])
     <div class="container">
         <h2 class="text-white text-center my-4">
             Modifica il tuo Ristorante
@@ -18,7 +18,7 @@
             <div class="card mb-5">
                 <p class="text-center text-secondary pt-4">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
                 {{-- FORM --}}
-                <form action="{{route('admin.resturants.update', $resturant)}}" method="POST" enctype="multipart/form-data">
+                <form id='edit_resturant' action="{{route('admin.resturants.update', $resturant)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group p-3">
@@ -52,6 +52,7 @@
                                     @endif>
                                     <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
                                 @endforeach
+                                <span id="checkboxError" class="invalid-feedback" style="display: none;">Selezionare almeno una tipologia.</span>
                                 @error('type_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

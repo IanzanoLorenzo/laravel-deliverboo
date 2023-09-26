@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+@vite(['resources/js/register_script.js'])
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -106,7 +107,7 @@
                         <div class="mb-4 row">
                             {{-- Via del ristorante --}}
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }} *</label>
-
+                            
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" autocomplete="new-address" value="{{ old('address') }}" required>
 
@@ -121,10 +122,10 @@
                         <div class="mb-4 row">
                             {{-- Immagine --}}
                             <label for="cover_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
-
+                            
                             <div class="col-md-6">
                                 <input id="cover_image" type="file" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" autocomplete="new-cover_image" value="{{ old('cover_image') }}">
-
+                                
                                 @error('cover_image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -166,4 +167,7 @@
         </div>
     </div>
 </div>
+<script>
+
+</script>
 @endsection
