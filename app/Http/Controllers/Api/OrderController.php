@@ -53,7 +53,7 @@ class OrderController extends Controller
             'costumer_email'=> ['required'],
             'costumer_name'=> ['required'],
             'costumer_surname'=> ['required'],
-            'delivery_tyme'=> ['required']
+            'delivery_time'=> ['required']
         ], $messages);
 
         if($validator->fails()){
