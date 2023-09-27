@@ -7,28 +7,28 @@
     <div class="container-fluid">
         @guest
         {{-- BENVENUTO QUEST --}}
-        <h1 class="text-light display-5 fw-bold text-center mt-4">
-            Inizia ad utilizzare il tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
-        </h1>
+        <div class="container">
+            <h1 class="text-light display-5 fw-bold text-center mt-4">
+                Inizia ad utilizzare il tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
+            </h1>
+        </div>
         @endguest
-        {{-- NOME UTENTE REGISTRATO --}}
         @auth
         <div class="container">
+            {{-- NOME UTENTE REGISTRATO --}}
             <h1 class="text-light display-5 fw-bold text-center mt-4"class="text-light display-5 fw-bold text-center mt-4">
             Salve <span class="text-dark">{{Auth::user()->name}}</span>!
             </h1>
-
+            {{-- PARAGRAFO UTENTE REGISTRSTO --}}
             <h3 class="text-light text-center mt-4">
             Siamo lieti di averti con noi! Grazie per aver scelto il nostro servizio per gestire 
             il tuo ristorante e raggiungere i tuoi clienti.
             </h3>
         </div>
-        
         @endauth
-
         <div class="container py-3">
             <hr class="text-white hr_style">
-            <div class="row">
+            <div class="row pt-4">
                 <div class="col-12 col-md-6 d-flex align-items-center">
                     {{-- PARAGRAFO GUEST --}}
                     @guest
@@ -57,7 +57,7 @@
                 </div> 
                 <div class="col-12 col-md-6 ">
                     {{-- Immagine gestionale --}}
-                    <img class="img-fluid"  src="{{ asset('storage/img/gestionale_home.png') }}" alt="">
+                    <img class="img-fluid pb-4 pt-4 pt-md-0"  src="{{ asset('storage/img/vector_gestionale.png') }}" alt="">
                 </div>
             </div>
             {{-- Pulsante Registrati --}}
