@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Resturant;
 use App\Models\orderDishRelation;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
@@ -50,9 +51,11 @@ class OrderController extends Controller
             ]
         ]);
 
+        $resturant = Resturant::where('slug', $orderData['resturant_slug'])->get()->first();
+
         if($result->success){
             $new_order = new Order;
-            $new_order->resturant_id = $orderData['resturant_id'];
+            $new_order->resturant_id = $resturant->id;
             $new_order->address = $orderData['address'];
             $new_order->customer_email = $orderData['costumer_email'];
             $new_order->customer_name = $orderData['costumer_name'];
