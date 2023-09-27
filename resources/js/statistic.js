@@ -31,7 +31,25 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10000,
+
+                    callback: function (value, index, values) {
+                        if (value === 0) return '0€';
+                        if (value === 1000) return '1000€';
+                        if (value === 2000) return '2000';
+                        if (value === 3000) return '3000';
+                        if (value === 4000) return '4000';
+                        if (value === 5000) return '5000';
+                        if (value === 6000) return '6000';
+                        if (value === 7000) return '7000';
+                        if (value === 8000) return '8000';
+                        if (value === 9000) return '9000';
+                        if (value === 10000) return '10000';
+
+                        return '';
+                    }
                 }
             }
         }
@@ -68,7 +86,25 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 500,
+
+                    callback: function (value, index, values) {
+                        if (value === 0) return '0';
+                        if (value === 50) return '50';
+                        if (value === 100) return '100';
+                        if (value === 150) return '150';
+                        if (value === 200) return '200';
+                        if (value === 250) return '250';
+                        if (value === 300) return '300';
+                        if (value === 350) return '350';
+                        if (value === 400) return '400';
+                        if (value === 450) return '450';
+                        if (value === 500) return '500';
+
+                        return '';
+                    }
                 }
             }
         }
