@@ -7,14 +7,14 @@
     <div class="container-fluid">
         @guest
         {{-- BENVENUTO QUEST --}}
-        <div class="container">
+        <div class="container mt-5">
             <h1 class="text-light display-5 fw-bold text-center mt-4">
                 Inizia ad utilizzare il tuo gestionale di <em class="text-dark shadow_title">DeliveBoo!</em>
             </h1>
         </div>
         @endguest
         @auth
-        <div class="container">
+        <div class="container mt-5">
             {{-- NOME UTENTE REGISTRATO --}}
             <h1 class="text-light display-5 fw-bold text-center mt-4"class="text-light display-5 fw-bold text-center mt-4">
             Salve <span class="text-dark">{{Auth::user()->name}}</span>!
@@ -33,13 +33,16 @@
                     {{-- PARAGRAFO GUEST --}}
                     @guest
                     <p class="text-white fs-5 lh-lg">
-                        Se hai mai desiderato semplificare la gestione del tuo ristorante o servizio di 
-                        consegna di <span class="text-dark fw-bold">cibo a domicilio</span>, sei nel posto giusto.
+                        Se hai mai desiderato <span class="text-dark fw-bold">semplificare</span> la gestione del tuo ristorante o servizio di 
+                        consegna di cibo a domicilio, sei nel <span class="text-dark fw-bold">posto giusto</span>.
                         <br> 
                         <br>
                         Il nostro sistema di gestione 
-                        è stato progettato su misura per le tue esigenze, offrendoti la <span class="text-dark fw-bold">soluzione completa</span> per rendere 
-                        la tua attività più efficiente e redditizia.
+                        è stato progettato su misura per le tue esigenze, 
+                        offrendoti la soluzione completa 
+                        per rendere la tua attività più 
+                        <span class="text-dark fw-bold">efficiente</span>
+                        e <span class="text-dark fw-bold">redditizia</span>.
                     </p>
                     @endguest
                     {{-- PARAGRAFO REGISTRATO--}}
@@ -47,11 +50,13 @@
                     <p class="text-white fs-5 lh-lg">
                         In questa pagina troverai tutte le informazioni e le funzionalità necessarie 
                         per gestire il tuo business in modo efficace. 
-                        Potrai creare il tuo menù, gestire gli ordini, monitorare le vendite e molto altro ancora.
+                        Potrai creare il tuo <span class="text-dark fw-bold">menù</span>, 
+                        gestire gli <span class="text-dark fw-bold">ordini</span>, 
+                        monitorare le <span class="text-dark fw-bold">vendite</span> e molto altro ancora.
                         <br> 
                         <br>
                         Siamo a tua disposizione per qualsiasi domanda o necessità. Contattaci per saperne di più su come possiamo 
-                        aiutarti a far crescere il tuo ristorante.
+                        aiutarti a far <span class="text-dark fw-bold">crescere il tuo ristorante</span>.
                     </p>
                     @endauth
                 </div> 
