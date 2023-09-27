@@ -8,6 +8,7 @@ $warning: #ff8800;
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;1,300;1,600;1,800&display=swap');
 
+
 body {
     background: linear-gradient(20deg, $danger 600px, $warning 600px);
     font-family: 'Montserrat', sans-serif;

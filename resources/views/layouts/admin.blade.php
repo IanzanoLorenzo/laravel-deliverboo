@@ -9,6 +9,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'DeliveBoo') }}</title>
+        {{-- Favicon --}}
+        <link rel="icon" sizes="128x128" href="./storage/logo/favicon.png" type="image/png" >
 
 
         <!-- Fonts -->
@@ -82,5 +84,4 @@
             </main>
         </div>
     </body>
-
 </html>
