@@ -45,7 +45,7 @@ class OrderController extends Controller
             'costumer_email.required' => 'Il campo email del cliente è obbligatorio.',
             'costumer_name.required' => 'Il campo nome del cliente è obbligatorio.',
             'costumer_surname.required' => 'Il campo cognome del cliente è obbligatorio.',
-            'delivery_tyme.required' => 'Il campo orario di consegna è obbligatorio.',
+            'delivery_time.required' => 'Il campo orario di consegna è obbligatorio.',
         ];
         
         $validator = Validator::make($request->input('order'), [
