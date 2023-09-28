@@ -62,6 +62,7 @@ class OrderController extends Controller
             $new_order->customer_surname = $orderData['costumer_surname'];
             $new_order->delivery_time = $orderData['delivery_time'];
             $new_order->total_price = $orderData['total_price'];
+            if($orderData['note']){$new_order->note = $orderData['note'];}
             $new_order->save();
 
             foreach($dishesData as $dish){
