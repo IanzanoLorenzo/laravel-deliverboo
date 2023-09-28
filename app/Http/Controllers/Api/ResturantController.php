@@ -42,7 +42,6 @@ class ResturantController extends Controller
         $resturants = $resturantsUnfiltered->filter(function ($resturant) use ($selectedTypes) {
             return count(array_intersect($resturant->types->pluck('id')->toArray(), $selectedTypes)) === count($selectedTypes);
         });
-    
 
         return response()->json(
             [
