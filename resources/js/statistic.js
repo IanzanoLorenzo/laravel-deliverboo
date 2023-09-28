@@ -88,20 +88,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 y: {
                     beginAtZero: true,
                     suggestedMin: 0,
-                    suggestedMax: 500,
+                    suggestedMax: 10,
 
                     callback: function (value, index, values) {
                         if (value === 0) return '0';
-                        if (value === 50) return '50';
-                        if (value === 100) return '100';
-                        if (value === 150) return '150';
-                        if (value === 200) return '200';
-                        if (value === 250) return '250';
-                        if (value === 300) return '300';
-                        if (value === 350) return '350';
-                        if (value === 400) return '400';
-                        if (value === 450) return '450';
-                        if (value === 500) return '500';
+                        if (value === 1) return '1';
+                        if (value === 2) return '2';
+                        if (value === 3) return '3';
+                        if (value === 4) return '4';
+                        if (value === 5) return '5';
+                        if (value === 6) return '6';
+                        if (value === 7) return '7';
+                        if (value === 8) return '8';
+                        if (value === 9) return '9';
+                        if (value === 10) return '10';
 
                         return '';
                     }
