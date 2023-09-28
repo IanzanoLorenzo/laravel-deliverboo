@@ -17,13 +17,21 @@
                 <div class="card-header">{{ __('La tua Dashboard') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                    @vite(['resources/js/statistic.js'])
+                    <div class="row g-4 mb-5">
+                        <div class="col-12 col-md-6">
+                            <div id="orderData" data-orderData="{{ json_encode($orderData) }}">
+                                <h1>Ammontare delle Vendite</h1>
+                                <canvas id="orderStatistics"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div id="orderReceivedData" data-orderReceivedData="{{ json_encode($orderReceivedData) }}">
+                                <h1>Riepilogo degli Ordini</h1>
+                                <canvas id="orderReceivedStatistics"></canvas>
+                            </div>
+                        </div>
                     </div>
-                    @endif
-
-                    {{ __('Accesso eseguito correttamente!') }}
                 </div>
             </div>
         </div>
