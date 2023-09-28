@@ -49,11 +49,6 @@
                         Modifica Piatti
                         <i class="fa-solid fa-pencil ms-1" style="color: #ffffff;"></i>
                     </a>
-
-                    <a href="{{ route('admin.order_statistics')}}" class="button_delive_two btn btn-sm" type="button">
-                        Modifica Piatti
-                        <i class="fa-solid fa-pencil ms-1" style="color: #ffffff;"></i>
-                    </a>
                 </div>
                 
             </div>

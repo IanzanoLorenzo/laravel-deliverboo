@@ -26,7 +26,10 @@ Route::middleware('auth', 'verified')->prefix('admin')->name('admin.')->group(fu
     Route::get('/resturants/edit', [ResturantController::class, 'edit'])->name('resturants.edit');
     Route::match(['put', 'patch'],'/resturants/{resturant}', [ResturantController::class, 'update'])->name('resturants.update');
     Route::resource('/dishes', DishController::class);
-    Route::get('/order_statistics', [OrderController::class, 'getOrderStatistics'])->name('order_statistics');
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+    Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+
+
 });
 
 Route::get('/', function () {

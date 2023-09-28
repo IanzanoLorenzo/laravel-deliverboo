@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Resturant;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 { /**
@@ -13,74 +15,27 @@ class OrderController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-   public function index()
-   {
-       //
-   }
+    public function index()
+    {
+        $resturant = Resturant::select('id')->where('user_id', '=', Auth::id())->get()->first();
+        $orders = Order::where('resturant_id', $resturant->id)->get();
 
-   /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-   public function create()
-   {
-       //
-   }
-
-   /**
-    * Store a newly created resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-   public function store(Request $request)
-   {
-       //
-   }
-
-   /**
-    * Display the specified resource.
-    *
-    * @param  \App\Models\Order  $order
-    * @return \Illuminate\Http\Response
-    */
-   public function show(Order $order)
-   {
-       //
-   }
-
-   /**
-    * Show the form for editing the specified resource.
-    *
-    * @param  \App\Models\Order  $order
-    * @return \Illuminate\Http\Response
-    */
-   public function edit(Order $order)
-   {
-       //
-   }
-
-   /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  \App\Models\Order  $order
-    * @return \Illuminate\Http\Response
-    */
-   public function update(Request $request, Order $order)
-   {
-       //
-   }
-
-   /**
-    * Remove the specified resource from storage.
-    *
-    * @param  \App\Models\Order  $order
-    * @return \Illuminate\Http\Response
-    */
-   public function destroy(Order $order)
-   {
-       //
-   }
+        return view('admin.orders.index', compact('orders'));
+    }
+    
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Order  $order
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Order $order)
+    {
+        $resturant = Resturant::select('id')->where('user_id', '=', Auth::id())->get()->first();
+        if($order->resturant_id === $resturant->id){
+            return view('admin.orders.show', compact('order'));
+        }else{
+            return redirect()->route('dashboard')->with('error', 'Non hai l\'autorizzazione per visualizzare quest\'ordine.');
+        }
+    }
 }

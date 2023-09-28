@@ -3,32 +3,35 @@
 @section('content')
 <div class="container">
 
-    <h2 class="fs-4 text-dark text-uppercase text-center my-4">
-        {{ __('Dashboard') }}
-    </h2>
     @if (session('error'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger mt-5">
         {{session('error')}}
     </div>
     @endif
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5">
         <div class="col">
-            <div class="card">
-                <div class="card-header">{{ __('La tua Dashboard') }}</div>
+            <div class="card text-center">
+                <h2 class="card-header">{{ __('La tua Dashboard') }}</h2>
 
                 <div class="card-body">
                     @vite(['resources/js/statistic.js'])
                     <div class="row g-4 mb-5">
                         <div class="col-12 col-md-6">
                             <div id="orderData" data-orderData="{{ json_encode($orderData) }}">
-                                <h1>Ammontare delle Vendite</h1>
+                                <h3>Ammontare delle Vendite</h3>
                                 <canvas id="orderStatistics"></canvas>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div id="orderReceivedData" data-orderReceivedData="{{ json_encode($orderReceivedData) }}">
-                                <h1>Riepilogo degli Ordini</h1>
+                                <h3>Riepilogo degli Ordini</h3>
                                 <canvas id="orderReceivedStatistics"></canvas>
+                                <div class="d-flex justify-content-center pt-2">
+                                    <a href="{{ route('admin.orders')}}" class="btn btn-sm btn-primary" type="button">
+                                        Accedi ai tuoi ordini
+                                        <i class="fa-solid fa-pencil ms-1" style="color: #ffffff;"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
