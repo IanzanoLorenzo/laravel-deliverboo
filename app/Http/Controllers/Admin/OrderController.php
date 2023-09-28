@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Resturant;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 { /**
@@ -47,6 +49,11 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('admin.orders.show', compact('order'));
+        $resturant = Resturant::select('id')->where('user_id', '=', Auth::id())->get()->first();
+        if($order->resturant_id = $resturant){
+            return view('admin.orders.show', compact('order'));
+        }else{
+            return view('admin.dashboard')->with('error', 'Non hai l\'autorizzazione per visualizzare quest\'ordine.');
+        }
     }
 }
