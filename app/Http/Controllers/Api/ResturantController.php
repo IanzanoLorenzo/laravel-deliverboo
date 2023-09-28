@@ -11,7 +11,7 @@ Use App\Models\Type;
 class ResturantController extends Controller
 {
     public function index(){
-        $resturants = Resturant::with('types')->get();
+        $resturants = Resturant::with('types')->paginate(4);
         $types = Type::all();
         return response()->json(
             [
