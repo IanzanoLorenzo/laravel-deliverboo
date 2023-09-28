@@ -8,6 +8,7 @@ $warning: #ff8800;
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;1,300;1,600;1,800&display=swap');
 
+
 body {
     background: linear-gradient(20deg, $danger 600px, $warning 600px);
     font-family: 'Montserrat', sans-serif;
@@ -34,9 +35,18 @@ body {
 //FINE STYLE
 
 //*****NAVBAR*****/
+.logo_size{
+    width: 75px;
+}
+.deliveboo_size{
+    width: 150px;
+    margin-left: 5px;
+
+}
+
 .nav_item_hover:hover {
     font-weight: 900;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.575);
+    border-bottom: 1px solid $primary;
     border-width: thin;
 }
 
@@ -54,10 +64,11 @@ body {
 .nav_drop_menu {
     background-color: rgba(245, 222, 179, 0.5);
 }
+.bg_navbar{
+    background: linear-gradient(40deg,white 0%, rgba(255, 255, 255, 0) 70%);
 
-//*****FINE NAVBAR*****/
+}
 
-//******HOME PAGE******/
 .hamburger_menu {
     padding: 3px !important;
     box-shadow: none !important;
@@ -66,7 +77,9 @@ body {
 .hamburger_menu:hover {
     background-color: rgba(255, 255, 255, 0.479) !important;
 }
+//*****FINE NAVBAR*****/
 
+//******HOME PAGE******/
 .shadow_title {
     text-shadow: 3px 3px white;
 }
