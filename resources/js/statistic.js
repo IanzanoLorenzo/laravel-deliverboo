@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Costruisci i dati per il primo grafico
     orderData.forEach(function (entry) {
-        labels.push(entry.year + '-' + entry.month);
+        labels.push(entry.month + '-' + entry.year);
         data.push(entry.total_sales);
     });
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Costruisci i dati per il secondo grafico
     orderReceivedData.forEach(function (entry) {
-        receivedLabels.push(entry.year + '-' + entry.month);
+        receivedLabels.push(entry.month + '-' + entry.year);
         receivedData.push(entry.order_count);
     });
 
