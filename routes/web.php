@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ResturantController as ResturantController;
 use App\Http\Controllers\Admin\DishController as DishController;
 use App\Http\Controllers\Admin\UserController as UserController;
 use App\Http\Controllers\Admin\OrderController as OrderController;
+use App\Http\Controllers\Admin\DashboardController as DashboardController;
 
 
 /*
@@ -32,9 +33,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
