@@ -33,20 +33,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 y: {
                     beginAtZero: true,
                     suggestedMin: 0,
-                    suggestedMax: 10000,
+                    suggestedMax: 1000,
 
                     callback: function (value, index, values) {
-                        if (value === 0) return '0€';
-                        if (value === 1000) return '1000€';
-                        if (value === 2000) return '2000';
-                        if (value === 3000) return '3000';
-                        if (value === 4000) return '4000';
-                        if (value === 5000) return '5000';
-                        if (value === 6000) return '6000';
-                        if (value === 7000) return '7000';
-                        if (value === 8000) return '8000';
-                        if (value === 9000) return '9000';
-                        if (value === 10000) return '10000';
+                        if (value === 0) return '0';
+                        if (value === 100) return '100';
+                        if (value === 200) return '200';
+                        if (value === 300) return '300';
+                        if (value === 400) return '400';
+                        if (value === 500) return '500';
+                        if (value === 600) return '600';
+                        if (value === 700) return '700';
+                        if (value === 800) return '800';
+                        if (value === 900) return '900';
+                        if (value === 1000) return '1000';
 
                         return '';
                     }
