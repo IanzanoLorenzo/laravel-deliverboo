@@ -50,10 +50,10 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         $resturant = Resturant::select('id')->where('user_id', '=', Auth::id())->get()->first();
-        if($order->resturant_id = $resturant){
+        if($order->resturant_id === $resturant->id){
             return view('admin.orders.show', compact('order'));
         }else{
-            return view('admin.dashboard')->with('error', 'Non hai l\'autorizzazione per visualizzare quest\'ordine.');
+            return redirect()->route('dashboard')->with('error', 'Non hai l\'autorizzazione per visualizzare quest\'ordine.');
         }
     }
 }
