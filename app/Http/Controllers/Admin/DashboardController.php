@@ -17,8 +17,8 @@ class DashboardController extends Controller
         $orderData = Order::select(DB::raw('YEAR(created_at) as year, MONTH(created_at) as month, SUM(total_price) as total_sales'))
             ->where('resturant_id', '=', $resturant->id)
             ->groupBy('year', 'month')
-            ->orderBy('year', 'desc')
-            ->orderBy('month', 'desc')
+            ->orderBy('year', 'asc')
+            ->orderBy('month', 'asc')
             ->take(12)
             ->get();
    
@@ -26,8 +26,8 @@ class DashboardController extends Controller
         $orderReceivedData = Order::select(DB::raw('YEAR(created_at) as year, MONTH(created_at) as month, COUNT(*) as order_count'))
             ->where('resturant_id', '=', $resturant->id)
             ->groupBy('year', 'month')
-            ->orderBy('year', 'desc')
-            ->orderBy('month', 'desc')
+            ->orderBy('year', 'asc')
+            ->orderBy('month', 'asc')
             ->take(12)
             ->get();
    

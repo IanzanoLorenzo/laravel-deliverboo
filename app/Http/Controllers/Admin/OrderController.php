@@ -18,7 +18,7 @@ class OrderController extends Controller
     public function index()
     {
         $resturant = Resturant::select('id')->where('user_id', '=', Auth::id())->get()->first();
-        $orders = Order::where('resturant_id', $resturant->id)->get();
+        $orders = Order::where('resturant_id', $resturant->id)->orderBy('created_at', 'desc')->get();
 
         return view('admin.orders.index', compact('orders'));
     }

@@ -11,7 +11,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">
-                                    Nome
+                                        Nome
                                     </th>
                                     <th scope="col">
                                         Cognome
@@ -21,6 +21,9 @@
                                     </th>
                                     <th scope="col">
                                         Prezzo Totale
+                                    </th>
+                                    <th scope="col">
+                                        Orario di consegna
                                     </th>
                                     <th scope="col">
                                         Mostra Ordine
@@ -35,6 +38,7 @@
                                         <td>{{ $order->customer_surname }}</td>
                                         <td>{{ $order->customer_email }}</td>
                                         <td>{{ $order->total_price}}€</td>
+                                        <td>{{ $order->delivery_time }}</td>
                                         <td><a href="{{ route('admin.orders.show', $order ) }}" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a></td>
                                         {{-- <td>
                                             <ul>
