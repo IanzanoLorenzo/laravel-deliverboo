@@ -41,9 +41,9 @@
             <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
                 {{-- FOTO RISTORANTE --}}
                 <img class="rounded-circle img_resturant" src="@if($resturant->cover_image !== null){{ asset( 'storage/'.$resturant->cover_image)}}@else {{ asset( 'storage/cover_images/default.png')}}@endif" alt="{{$resturant->name}}">
-                <div class="mt-4 d-flex justify-content-center flex-wrap">
-                    <a class="btn button_delive_three" href="{{route('admin.orders.index')}}">I tuoi ordini</a>
-                    <a class="btn button_delive_two" href="{{route('admin.dishes.create')}}">Crea nuovo piatto</a>
+                <div class="mt-1 d-flex justify-content-center flex-wrap">
+                    <a class="btn button_delive_three mx-1 mt-3" href="{{route('admin.orders.index')}}">I tuoi ordini</a>
+                    <a class="btn button_delive_two mx-1 mt-3" href="{{route('admin.dishes.create')}}">Crea nuovo piatto</a>
                 </div>
             </div>
             <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
