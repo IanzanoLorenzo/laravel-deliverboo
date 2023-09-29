@@ -44,9 +44,8 @@ class OrderConfirmation extends Mailable
      */
     public function content()
     {
-        return new Content([
-            'view' => 'emails.order.confirmation'
-        ]
+        return new Content(
+            view: 'emails.order_confirmation'
         );
     }
 

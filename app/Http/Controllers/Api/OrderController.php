@@ -6,10 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Resturant;
+use App\Models\User;
 use App\Models\orderDishRelation;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use Braintree\Gateway;
+use App\Mail\OrderConfirmation;
+use App\Mail\RestaurantConfirmation;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -53,6 +57,8 @@ class OrderController extends Controller
 
         $resturant = Resturant::where('slug', $orderData['resturant_slug'])->get()->first();
 
+        $owner = User::find($resturant->user_id);
+
         if($result->success){
             $new_order = new Order;
             $new_order->resturant_id = $resturant->id;
@@ -72,6 +78,10 @@ class OrderController extends Controller
                 $order_dish->n_dish = $dish['quantity'];
                 $order_dish->save();
             };
+
+            Mail::to($orderData['costumer_email'])->send(new OrderConfirmation($new_order));
+
+            Mail::to($owner->email)->send(new RestaurantConfirmation($new_order));
 
             return response()->json([
                 'success' => true,

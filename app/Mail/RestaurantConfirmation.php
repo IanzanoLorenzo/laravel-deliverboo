@@ -45,9 +45,9 @@ class RestaurantConfirmation extends Mailable
      */
     public function content()
     {
-        return new Content([
-            'view' => 'emails.order.confirmation', // Specifica la vista per il contenuto dell'email
-        ]);
+        return new Content(
+            view: 'emails.restaurant_confirmation'
+        );
     }
 
     /**
