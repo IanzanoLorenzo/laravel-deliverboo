@@ -17,7 +17,9 @@ class Order extends Model
         'costumer_name', 
         'costumer_surname', 
         'delivery_time', 
-        'total_price'
+        'total_price',
+        'created_at',
+        'updated_at'
     ];
 
     public function resturant(){

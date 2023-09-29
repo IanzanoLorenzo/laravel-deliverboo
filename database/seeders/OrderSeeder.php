@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Order;
 use App\Models\orderDishRelation;
 use App\Models\Dish;
+use Carbon\Carbon;
 
 class OrderSeeder extends Seeder
 {
@@ -42,7 +43,9 @@ class OrderSeeder extends Seeder
                 $order_dish->save();
             };
             $new_order->total_price = $total_price;
-            $new_order->update();
+            $new_order->created_at = Carbon::parse($order['created_at']);
+            $new_order->updated_at = Carbon::parse($order['updated_at']);
+            $new_order->save();
         };
     }
 }

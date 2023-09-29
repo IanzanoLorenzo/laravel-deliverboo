@@ -33,3 +33,9 @@ Route::prefix('payments')->group(function(){
     Route::post('/process', [OrderController::class, 'processPayment']);
 });
 
+// Route per l'invio dell'email al cliente
+Route::post('api/send-email-to-customer', 'EmailController@sendEmailToCustomer');
+
+// Route per l'invio dell'email al ristoratore
+Route::post('api/send-email-to-restaurant', 'EmailController@sendEmailToRestaurant');
+
