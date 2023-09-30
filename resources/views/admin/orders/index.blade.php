@@ -4,8 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="card">
-                    <div class="card-body pb-0">
+                <h2 class="my-4 text-center fs-1">
+                    I tuoi <strong class="text-uppercase">Ordini</strong>
+                </h2>
+            </div>
+            <div class="col-12">
+                <div class="card my-5">
+                    <div class="card-body pb-0 pt-5">
                         <table class="table m-0">
                                 {{-- Visualizza il nome del ristorante --}}
                             <thead>

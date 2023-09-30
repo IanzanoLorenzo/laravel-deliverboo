@@ -43,9 +43,21 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto ">
                             {{-- HOME --}}
+                            @guest                    
                             <li class="nav-item nav_item_hover">
                                 <a class="nav-link text-dark fs-6 p-1" href="{{url('/') }}">{{ __('Home') }}</a>
                             </li>
+                            @else
+                            <li class="nav-item nav_item_hover">
+                                <a class="nav-link text-dark fs-6 p-1" href="{{ route('admin.resturants') }}">{{ __('Ristorante') }}</a>
+                            </li>
+                            <li class="nav-item nav_item_hover">
+                                <a class="nav-link text-dark fs-6 p-1" href="{{ route('admin.dishes.index') }}">{{ __('Piatti') }}</a>
+                            </li>
+                            <li class="nav-item nav_item_hover">
+                                <a class="nav-link text-dark fs-6 p-1" href="{{ route('admin.orders.index') }}">{{ __('Ordini') }}</a>
+                            </li>
+                            @endguest
                         </ul>
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -56,23 +68,20 @@
                             </li>
                             {{-- DROP DOWN MENU --}}
                             @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item d-flex align-items-center">
                                 {{-- NOME UTENTE REGISTRATO --}}
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle  nav_auth_hover text-dark text-uppercase fs-5 p-1" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link nav_auth_hover text-dark text-uppercase fs-5 p-1" href="#" role="button">
                                     {{ Auth::user()->name }}
                                 </a>
-                                {{-- LISTA DROP DOWN --}}
-                                <div class="nav_drop_menu dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item nav_itemdrop_hover" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
-                                    <a class="dropdown-item nav_itemdrop_hover" href="{{ route('admin.resturants') }}">{{__('Il tuo Ristorante')}}</a>
-                                    <a class="dropdown-item nav_itemdrop_hover" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Esci') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
+                            </li>
+                            <li class="nav-item d-flex align-items-center ps-3">
+                                <a class="nav-link nav_auth_hover text-dark text-capitalize p-1 pt-2 d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Esci') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
                             @endguest
                         </ul>

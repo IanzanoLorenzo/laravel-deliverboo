@@ -2,19 +2,25 @@
 
 @section('content')
     <div class="container">
-        {{-- UTENTE RISTORATORE --}}
-        <h2 class="text-center text-white">
-            Salve 
-            <strong class="text-dark">{{ $user->name }}</strong>
-            !
-        </h2>
-        {{-- NOME RISTORANTE --}}
-        <h4 class="text-center text-white mb-4">
-            Gestisci qui il menù del tuo ristorante
-            <em class="text-dark display-6">{{ $resturant->name }}</em>
-            .
-        </h4>
-        <hr class="text-white hr_style mb-4">
+        <div class="row mt-5">
+                {{-- UTENTE RISTORATORE --}}
+            <div class="col-12">
+                <h2 class="text-center text-white">
+                    Salve 
+                    <strong class="text-dark">{{ $user->name }}</strong>
+                    !
+                </h2>
+            </div>
+            {{-- NOME RISTORANTE --}}
+            <div class="col-12">
+                <h4 class="text-center text-white mb-4">
+                    Gestisci qui il menù del tuo ristorante
+                    <em class="text-dark display-6">{{ $resturant->name }}</em>
+                    .
+                </h4>
+            </div>
+            <div class="col-12"><hr class="text-white hr_style mb-4"></div>
+        </div>
         <div class="row justify-content-center align-items-center">
             <div class="col-12 offset-md-1 col-md-3 d-flex flex-column justify-content-center">
                 {{-- TIPI RISTORANTE --}}
@@ -32,15 +38,19 @@
                 </ul>       
             </div>
 
-            <div class="col-12 col-md-4 d-flex justify-content-center">
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
                 {{-- FOTO RISTORANTE --}}
                 <img class="rounded-circle img_resturant" src="@if($resturant->cover_image !== null){{ asset( 'storage/'.$resturant->cover_image)}}@else {{ asset( 'storage/cover_images/default.png')}}@endif" alt="{{$resturant->name}}">
+                <div class="mt-1 d-flex justify-content-center flex-wrap">
+                    <a class="btn button_delive_three mx-1 mt-3" href="{{route('admin.orders.index')}}">I tuoi ordini</a>
+                    <a class="btn button_delive_two mx-1 mt-3" href="{{route('admin.dishes.create')}}">Crea nuovo piatto</a>
+                </div>
             </div>
             <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
 
                 <div class="d-flex mt-4 mt-md-0">
                     {{-- PULSANTE EDIT RISTORANTE --}}
-                    <a href="{{ route('admin.resturants.edit')}}" class="me-3 button_delive_three btn btn-sm d-flex align-items-center" type="button">
+                    <a href="{{ route('admin.resturants.edit')}}" class="me-3 button_delive_two btn btn-sm btn btn-sm d-flex align-items-center" type="button">
                         Modifica Ristorante
                         <i class="fa-solid fa-pencil ms-1" style="color: #ffffff;"></i>
                     </a>

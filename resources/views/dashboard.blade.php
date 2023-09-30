@@ -27,7 +27,7 @@
                                 <h3>Riepilogo degli Ordini</h3>
                                 <canvas id="orderReceivedStatistics"></canvas>
                                 <div class="d-flex justify-content-center pt-2">
-                                    <a href="{{ route('admin.orders')}}" class="btn btn-sm btn-primary" type="button">
+                                    <a href="{{ route('admin.orders.index')}}" class="btn btn-sm btn-primary" type="button">
                                         Accedi ai tuoi ordini
                                         <i class="fa-solid fa-pencil ms-1" style="color: #ffffff;"></i>
                                     </a>
