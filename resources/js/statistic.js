@@ -3,13 +3,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // Estrai i dati per il primo grafico (ammontare vendite)
     let orderData = JSON.parse(document.getElementById('orderData').getAttribute('data-orderData'));
 
-    let labels = [];
-    let data = [];
+    // Calcola la data dell'ultimo ordine ricevuto
+    const lastPayment = orderData.reduce((maxDate, entry) => {
+        const entryDate = new Date(entry.year, parseInt(entry.month) - 1);
+        return entryDate > maxDate ? entryDate : maxDate;
+    }, new Date(1970, 0)); // Data iniziale di riferimento
 
-    // Costruisci i dati per il primo grafico
+    // Inizializza gli array di etichette e dati con 12 elementi vuoti
+    let labels = Array(12).fill('');
+    let data = Array(12).fill(0);
+
+    // Cicla attraverso i dati per calcolare gli indici dei mesi
     orderData.forEach(function (entry) {
-        labels.push(entry.month + '-' + entry.year);
-        data.push(entry.total_sales);
+        const monthIndex = (lastPayment.getFullYear() - entry.year) * 12 + (lastPayment.getMonth() - parseInt(entry.month)) + 1;
+        labels[11 - monthIndex] = entry.month + '-' + entry.year; // Invertiamo l'ordine delle etichette
+        data[11 - monthIndex] = entry.total_sales; // Invertiamo l'ordine dei dati
     });
 
     // Ottieni il contesto del canvas per il primo grafico
@@ -34,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     beginAtZero: true,
                     suggestedMin: 0,
                     suggestedMax: 1000,
-
                     callback: function (value, index, values) {
                         if (value === 0) return '0';
                         if (value === 100) return '100';
@@ -55,17 +62,44 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+
+
+
     // Creazione del secondo grafico per gli ordini ricevuti
     let orderReceivedData = JSON.parse(document.getElementById('orderReceivedData').getAttribute('data-orderReceivedData'));
 
-    let receivedLabels = [];
-    let receivedData = [];
+    // Calcola la data dell'ultimo ordine ricevuto
+    const lastOrderDate = orderReceivedData.reduce((maxDate, entry) => {
+        const entryDate = new Date(entry.year, parseInt(entry.month) - 1);
+        return entryDate > maxDate ? entryDate : maxDate;
+    }, new Date(1970, 0)); // Data iniziale di riferimento
 
-    // Costruisci i dati per il secondo grafico
+    // Calcola la data corrente
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1; // Il mese corrente, aggiungiamo 1 perché i mesi iniziano da 0
+
+    // Calcola il numero di mesi tra l'ultimo ordine e il mese corrente
+    const monthsDiff = (currentYear - lastOrderDate.getFullYear()) * 12 + (currentMonth - lastOrderDate.getMonth());
+
+    // Inizializza gli array di etichette e dati con 12 elementi vuoti
+    let receivedLabels = Array(12).fill('');
+    let receivedData = Array(12).fill(0);
+
+    // Cicla attraverso i dati per calcolare gli indici dei mesi
     orderReceivedData.forEach(function (entry) {
-        receivedLabels.push(entry.month + '-' + entry.year);
-        receivedData.push(entry.order_count);
+        const monthIndex = (lastOrderDate.getFullYear() - entry.year) * 12 + (lastOrderDate.getMonth() - parseInt(entry.month)) + 1;
+        receivedLabels[11 - monthIndex] = entry.month + '-' + entry.year; // Invertiamo l'ordine delle etichette
+        receivedData[11 - monthIndex] = entry.order_count; // Invertiamo l'ordine dei dati
     });
+
+    // Aggiungi i mesi-anno mancanti all'array delle etichette
+    for (let i = 0; i < monthsDiff && i < 12; i++) {
+        const monthToAdd = (currentMonth - i) % 12;
+        const yearToAdd = currentYear - Math.floor((currentMonth - i - 1) / 12);
+        const monthIndex = 11 - i;
+        receivedLabels[monthIndex] = monthToAdd + '-' + yearToAdd;
+    }
 
     // Ottieni il contesto del canvas per il secondo grafico
     let receivedCtx = document.getElementById('orderReceivedStatistics').getContext('2d');
@@ -89,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     beginAtZero: true,
                     suggestedMin: 0,
                     suggestedMax: 10,
-
                     callback: function (value, index, values) {
                         if (value === 0) return '0';
                         if (value === 1) return '1';
