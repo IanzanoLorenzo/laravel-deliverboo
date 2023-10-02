@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container mb-5 pb-5">
         <div class="col-12">
             {{-- TITOLONE --}}
             <h2 class="text-white text-center my-4">
@@ -61,7 +61,7 @@
                     {{-- PULSANTE CREA PIATTO --}}
                     <button type="submit" class="btn btn-warning m-3">Crea piatto</button>  
                     {{-- PULSANTE TORNA AI PIATTI --}}
-                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Torna alla lista piatti</a>
+                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary m-3 m-md-0">Torna alla lista piatti</a>
                 </form>
                 {{-- FINE FORM --}}
             </div>

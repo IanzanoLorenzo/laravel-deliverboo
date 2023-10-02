@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container mb-5 pb-5">
         <div class="col-12">
             <h1 class=" text-white text-center my-4">
                 Modifica "{{ $dish->name }}"
@@ -62,7 +62,7 @@
                     
                     <button type="submit" class="btn btn-primary m-3">Modifica piatto</button>
                     {{-- PULSANTE ANNULLA MODIFICA --}}
-                    <a href="{{ url()->previous() }}" class="btn btn-danger text-white">Annulla modifica</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-danger text-white m-3 m-md-0">Annulla modifica</a>
                 </form>
             </div>
         </div>

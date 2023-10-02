@@ -68,7 +68,7 @@
             {{-- Pulsante Registrati --}}
             @guest
             @if (Route::has('register'))
-                <div class="d-flex justify-content-center justify-content-md-start mt-4 mt-md-0">
+                <div class="d-flex justify-content-center justify-content-md-start my-4 pb-5 mt-md-0">
                     <a href="{{ route('register')}}" class="button_delive btn btn-lg" type="button">
                         Registrati
                     </a>

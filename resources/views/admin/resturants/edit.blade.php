@@ -2,7 +2,7 @@
 
 @section('content')
 @vite(['resources/js/edit_resturant.js'])
-    <div class="container">
+    <div class="container mb-5 pb-5">
         <h2 class="text-white text-center my-4">
             Modifica il tuo Ristorante
         </h2>
@@ -42,15 +42,16 @@
                     <div class="form-group p-3">
                         <label for="type_name" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }} *</label>
                         <div class="col-12">
-                            <div class="input-group">
-                                {{-- CHECKBOX --}}
-                                @foreach ($types as $type)
+                            {{-- CHECKBOX --}}
+                            @foreach ($types as $type)
+                                <div class="input-group">
                                     <input id="type_name{{ $type->id }}" type="checkbox" class="form-check-input mx-3 @error('type_name') is-invalid @enderror" name="type_name[]" value="{{ $type->id }}" @if ($errors->any())
                                     {{ in_array($type->id, old('type_name', [])) ? 'checked' : ''}}
                                     @else
                                         {{ $resturant->types->contains($type->id) ? 'checked' : '' }}
                                     @endif>
                                     <label class="" for="type_name{{ $type->id }}">{{ $type->name }}</label>
+                                </div>
                                 @endforeach
                                 <span id="checkboxError" class="invalid-feedback" style="display: none;">Selezionare almeno una tipologia.</span>
                                 @error('type_name')
@@ -58,7 +59,6 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
                         </div>
                     </div>
                 
@@ -80,7 +80,7 @@
                         Modifica Ristorante
                     </button> 
                     {{-- PULSANTE ANNULLA --}} 
-                    <a href="{{ url()->previous() }}" class="btn btn-danger text-white">
+                    <a href="{{ url()->previous() }}" class="btn btn-danger text-white m-3 m-md-0">
                         Annulla Modifica
                     </a>
                 </form>

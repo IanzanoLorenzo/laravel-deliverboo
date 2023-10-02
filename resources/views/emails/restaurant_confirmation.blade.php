@@ -7,4 +7,7 @@
 </ul>
 <p>Totale: {{ number_format($order->total_price, 2, ',','.') }}&euro;</p>
 <p>Orario di consegna: {{ substr($order->delivery_time, 0, 5) }}</p>
+<p>Indirizzo di consegna: {{ $order->address }}</p>
+@if($order->note)
 <p>Note: {{ $order->note }}</p>
+@endif

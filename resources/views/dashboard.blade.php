@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="row ">
+    <div class="row mb-5 pb-5">
         <div class="col-12 col-md-6 mt-4 ">
             <div class="d-flex justify-content-center justify-content-md-end">
                 {{-- PULSANTE RISTORANTE --}}
