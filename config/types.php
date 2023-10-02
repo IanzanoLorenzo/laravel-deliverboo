@@ -23,7 +23,7 @@
         [
             // 5
             'name' => 'Indiano',
-            'icon' => 'fa-pepper-hot'
+            'icon' => 'fa-bowl-food'
         ],
         [
             // 6
@@ -43,11 +43,11 @@
         [
             // 9
             'name' => 'Coreano',
-            'icon' => 'fa-utensils'
+            'icon' => 'fa-fish-fins'
         ],
         [
             // 10
             'name' => 'Spagnolo',
-            'icon' => 'fa-wine-glass'
+            'icon' => 'fa-shrimp'
         ],
     ];
