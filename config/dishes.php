@@ -14,7 +14,7 @@ return [
         'ingredients' => 'Impasto per pizza, Salsa di pomodoro, Mozzarella, Basilico fresco, Olio d\'oliva',
         'price' => 10.99,
         'resturant_id' => 1,
-        'visibility' => true,
+        'visibility' => false,
     ],
     [
         'name' => 'Lasagne',
@@ -28,7 +28,7 @@ return [
         'ingredients' => 'Riso Arborio, Funghi, Cipolla, Vino bianco, Parmigiano',
         'price' => 15.99,
         'resturant_id' => 1,
-        'visibility' => true,
+        'visibility' => false,
     ],
     [
         'name' => 'Ossobuco alla Milanese',
@@ -70,7 +70,7 @@ return [
         'ingredients' => 'Impasto per pizza, Ricotta, Mozzarella, Prosciutto, Salsa di pomodoro',
         'price' => 11.99,
         'resturant_id' => 1,
-        'visibility' => true,
+        'visibility' => false,
     ],
     // Ristorante giapponese
     [
