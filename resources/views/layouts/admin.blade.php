@@ -28,7 +28,7 @@
             {{-- NAVBAR --}}
             <nav class="navbar navbar-expand-md bg_navbar">
                 <div class="container">
-                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                    <a class="navbar-brand d-flex align-items-center" href="http://localhost:5174/">
                         {{-- LOGO --}}
                         <img src="{{asset('storage/logo/logo-deliveboo.png')}}" class="logo_size" alt="logo-deliveboo">
                         {{-- DELIVEBOO --}}
@@ -49,13 +49,16 @@
                             </li>
                             @else
                             <li class="nav-item nav_item_hover">
-                                <a class="nav-link text-dark fs-6 p-1" href="{{ route('admin.resturants') }}">{{ __('Ristorante') }}</a>
+                                <a class="nav-link text-dark fs-6 p-1" href="{{ route('admin.resturants') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item nav_item_hover">
                                 <a class="nav-link text-dark fs-6 p-1" href="{{ route('admin.dishes.index') }}">{{ __('Piatti') }}</a>
                             </li>
                             <li class="nav-item nav_item_hover">
                                 <a class="nav-link text-dark fs-6 p-1" href="{{ route('admin.orders.index') }}">{{ __('Ordini') }}</a>
+                            </li>
+                            <li class="nav-item nav_item_hover">
+                                <a class="nav-link text-dark fs-6 p-1" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                             </li>
                             @endguest
                         </ul>
@@ -74,7 +77,7 @@
                                     {{ Auth::user()->name }}
                                 </a>
                             </li>
-                            <li class="nav-item d-flex align-items-center ps-3">
+                            <li class="nav-item d-flex align-items-center ps-md-3 ">
                                 <a class="nav-link nav_auth_hover text-dark text-capitalize p-1 pt-2 d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                     {{ __('Esci') }}

@@ -8,11 +8,14 @@
         {{session('error')}}
     </div>
     @endif
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2 class="my-4 text-center fs-1">
+                La tua <strong class="text-uppercase">dashboard</strong>
+            </h2>
+        </div>
         <div class="col">
-            <div class="card text-center">
-                <h2 class="card-header">{{ __('La tua Dashboard') }}</h2>
-
+            <div class="card text-center my-5">
                 <div class="card-body">
                     @vite(['resources/js/statistic.js'])
                     <div class="row g-4 mb-5">
