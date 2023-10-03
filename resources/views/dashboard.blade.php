@@ -3,11 +3,6 @@
 @section('content')
 <div class="container">
 
-    @if (session('error'))
-    <div class="alert alert-danger mt-5">
-        {{session('error')}}
-    </div>
-    @endif
     <div class="row justify-content-center">
         <div class="col-12">
             <h2 class="my-4 text-center fs-1">
