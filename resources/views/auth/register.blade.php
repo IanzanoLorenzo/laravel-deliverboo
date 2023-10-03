@@ -12,7 +12,7 @@
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                         <h2 class="text-center text-primary title_form">Inserisci i tuoi dati</h2>
-                        <p class="text-center text-secondary p-2 mt-4">i campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
+                        <p class="text-center text-secondary p-2 mt-4">I campi contrassegnati con questo simbolo <strong>*</strong> sono obbligatori</p>
                         {{-- INIZIO INPUT-FORM --}}
                         <div class="mb-4 row">
                             {{-- Nome --}}
