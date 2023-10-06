@@ -12,7 +12,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class ResturantController extends Controller
 {
     public function index(){
-        $resturants = Resturant::with('types')->paginate(4);
+        $resturants = Resturant::with('types')->paginate(6);
         $types = Type::all();
         return response()->json(
             [
