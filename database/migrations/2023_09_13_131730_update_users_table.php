@@ -11,6 +11,9 @@ return new class extends Migration
      *
      * @return void
      */
+
+     //INSERISCO NELLA TABELLA USER ANCHE SURNAME E VAT_NUMBER
+
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
